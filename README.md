@@ -37,10 +37,5 @@ See the [nsdta/README.md](nsdta/README.md) for detailed documentation on:
 - SQL scripts: [nsdta/sql/](nsdta/sql/)
 - Documentation: [nsdta/docs/](nsdta/docs/)
 
-### Chief Investigator Emails
-- colin.wiltshire@anu.edu.au
-- judy.putt@anu.edu.au
-- thiago.oppermann@anu.edu.au
-
 ### Department of Pacific Affairs, Australian National University
 https://bellschool.anu.edu.au/dpa
