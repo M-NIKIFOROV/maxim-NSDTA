@@ -42,7 +42,5 @@ See the [nsdta/README.md](nsdta/README.md) for detailed documentation on:
 - judy.putt@anu.edu.au
 - thiago.oppermann@anu.edu.au
 
-### Department of Pacific Affairs Coral Bell School of Asia Pacific Affairs
-### ANU College of Asia & Pacific 
-### The Australian National University 
-### Canberra ACT 2601
+### Department of Pacific Affairs, Australian National University
+https://bellschool.anu.edu.au/dpa
