@@ -1,0 +1,77 @@
+# R specific
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# R temporary files
+*~
+.RData
+.Rdata
+.rdata
+
+# Session Data files
+.RData
+.RDataTmp
+
+# RStudio files
+.Rproj.user/
+
+# OAuth2 token
+.httr-oauth
+.oauth-token
+
+# knitr and R markdown
+*.utf8.md
+*.knit.md
+.Rmd.knit.md
+
+# R Environment Variables
+.Renviron
+.Rprofile
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python (if used for any scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.ipynb_checkpoints
+
+# Output files (optional - uncomment if you don't want to track outputs)
+# nsdta/output/tables/*.csv
+# nsdta/output/figures/*.png
+# nsdta/output/figures/*.pdf
+
+# Large data files (optional - uncomment if data files are too large for git)
+# nsdta/data/raw/**/*.csv
+# nsdta/data/cleaned/*.csv
