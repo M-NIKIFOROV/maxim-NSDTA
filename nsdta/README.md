@@ -32,6 +32,4 @@ nsdta/
 ```
 
 ## Contact
-Maxim Nikiforov
-maxim.nikiforov@outlook.com or u7925656@anu.edu.au
-0413 216 567
+Maxim Nikiforov (u7925656@anu.edu.au)
