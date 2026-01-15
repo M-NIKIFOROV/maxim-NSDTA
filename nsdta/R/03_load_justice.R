@@ -15,11 +15,10 @@
     library(rmarkdown)
     library(here)
     library(readxl)
-
     getwd() # check working directory
 
 # Load raw data
-    justice_file <- here("nsdta", "data", "raw", "law_justice", "as_xlsx",
+    justice_file <- here("nsdta", "data", "raw", "law_justice",
                          "Copy of Justice Data_with corrected village name 1225.xlsx")
     
     justice_magistrate_raw <- read_excel(justice_file, sheet = 1, skip = 1, col_types = "text")
@@ -39,20 +38,20 @@ tibble(
 # ============================================================================
 
 # Define columns to remove
-    common_remove <- c(2:10, 15)  # Columns to remove from ALL datasets
+    common_remove <- c(2:10, 14:15)  # Columns to remove from ALL datasets
     
     mag_clerk_remove <- c(
-        17:19, 22, 44, 65:74, 139, 155:165, 167, 172:176, 178, 197,
+        17:19, 22, 44, 65:74, 76, 81, 86, 90, 92, 97, 102, 107, 112, 139, 155:165, 167, 172:176, 178, 197,
         200:201, 203, 206, 209:211, 240:241, 248:249
     )  # Additional columns to remove from magistrate & clerk
     
     community_remove <- c(
-        17:19, 25, 36, 38, 66, 69, 71, 73, 75:76, 78:79, 82, 86, 89,
+        17:19, 25, 36, 38, 66, 69, 71, 73, 75:76, 78:79, 82, 89,
         93, 98, 100, 102, 108:109
     )  # Additional columns to remove from community
     
     police_remove <- c(
-        16:17, 21, 39, 66, 68:69, 107, 114, 128, 130:132, 135, 140:141,
+        16:17, 21, 66, 68:69, 107, 114, 128, 130:132, 135, 140:141,
         145, 150:151, 155, 160, 165, 170, 182, 194:195, 125, 230, 232:238,
         240:245, 247, 250:251, 262:263, 289, 294, 342, 350:351
     )  # Additional columns to remove from police
@@ -81,10 +80,631 @@ tibble(
 # STEP 2: Rename variables to be simpler
 # ============================================================================
 
-    justice_magistrate <- justice_magistrate %>%
-        rename(
-            # new_name = "old_name"
-        )
+    # Create rename function for common columns across all datasets
+        rename_common <- function(df) {
+            df %>%
+                rename(
+                    id = `Identifier`,
+                    interview_date = `Interview Date:`,
+                    province = `Province`,
+                    district = `District`,
+                    village = `Corrected village name`,
+                    village_court = `Village Court:`
+                )
+        }
+    
+    # Apply common renames to all datasets
+        justice_magistrate <- justice_magistrate %>% rename_common()
+        justice_clerk <- justice_clerk %>% rename_common()
+        justice_community <- justice_community %>% rename_common()
+        justice_police <- justice_police %>% rename_common()
+
+    
+    # Create rename function for magistrate and clerk datasets
+        rename_mag_clerk <- function(df) {
+            df %>%
+                rename(
+                    # Basic identifiers (common ones already renamed)
+                    nearest_police = `Nearest police station/post:`,
+                    
+                    # Section A: Respondent characteristics
+                    resp_gender = `A2. Gender of respondent:`,
+                    resp_age = `A3. Age of respondent:`,
+                    is_chairman = `A4. Are you the Chairman for this [Village Court?`,
+                    not_chairman = `A5. If not the Chairman, what is your position?`,
+                    not_chairman_other = `A5. If not the Chairman, what is your position?--OTHER--`,
+                    chairman_gender = `A6. If not the Chairman, what is the gender of the Chairman?`,
+                    from_district = `A7. Are you from this District?`,
+                    speak_local = `A8. Can you speak the local tok ples in this community?`,
+                    years_worked = `A9. How many years have you worked in this Village Court? [write YEAR, including this year]`,
+                    is_elected = `A10. Were you elected to the Village Court by the community here?`,
+                    non_elected_desc = `A11. If no, please describe how you were appointed:`,
+                    
+                    # Section B: Court characteristics
+                    remoteness = `B1. How remote is this Village Court?`,
+                    hearing_location = `B2. Where does the Village Court hold its hearings?`,
+                    hearing_location_other = `B2. Where does the Village Court hold its hearings?--OTHER--`,
+                    n_officials = `B3. Currently, how many officials are appointed to this Village Court?`,
+                    n_women_officials = `B4. How many of these officials are women?`,
+                    n_regular_attend = `B5. How many of these officials regularly attend at this Village Court’s hearings?`,
+                    pay_govt_level = `B6. Which level of government is responsible for paying the officials?`,
+                    all_receive_pay = `B7. Do all of the officials receive their pay?`,
+                    unpaid_officials = `B8. If no, which officials do not receive their pay? [MR]`,
+                    unpaid_officials_other = `B8. If no, which officials do not receive their pay? [MR]--OTHER--`,
+                    training_desc = `B10. Describe the training the Court officials have done since the last national election ie since 2022?`,
+                    hearing_frequency = `B11. How often does the Village Court usually hear cases?`,
+                    hearing_frequency_other = `B11. How often does the Village Court usually hear cases?--OTHER--`,
+                    set_sitting_day = `B12. Is there a set day that the Village Court sits?`,
+                    cases_per_day = `B13. How many cases are heard in a typical day at this Village Court?`,
+                    n_meetings_2024 = `B14. In 2024, how many times did the Village Court meet?`,
+                    n_joint_sittings_2024 = `B15. In 2024, how many joint sittings did this Village Court have?`,
+                    keep_records = `B16. Does this Village Court keep records of the cases?`,
+                    send_returns_where = `B17. In 2024, where did the Court send quarterly returns/records to?`,
+                    
+                    # Section C: Facilities
+                    has_building = `C1. Does this Village Court have a building?`,
+                    building_state = `C2. If yes, in what state is the building?`,
+                    land_available = `C3. If no, is there land appropriate for a Village Court building?`,
+                    has_vehicle = `C4. Does this Court have its own vehicle?`,
+                    uniform_state = `C5. In what state are the officials’ uniforms?`,
+                    uniform_state_other = `C5. In what state are the officials’ uniforms?--OTHER--`,
+                    has_table_chairs = `C6. Does this Court have its own table and chairs?`,
+                    court_forms_supply = `C7.  Does this Court get a regular supply of court order forms?`,
+                    stationery_supply = `C8. Does this Court have a regular supply of other stationery eg. Receipt books, quarterly return forms?`,
+                    has_act_regulations = `C9. Does the Court have a copy of the Village Court Act and the Regulations?`,
+                    has_manual = `C10. Does the Court have a copy of the Village Court manual?`,
+                    
+                    # Section D: Access to services
+                    dist_court_transport = `D3a. How would you get to the District Court?`,
+                    dist_court_days = `D3c. If days, how many days to get there?`,
+                    dist_court_hours = `D3d. If hours, how many hours to get there?`,
+                    dist_court_mins = `D3e. If minutes, how many minutes to get there?`,
+                    school_transport = `D4a. How would you get to the Primary/community School?`,
+                    school_time_unit = `D4b. How long does it take to get there?`,
+                    school_days = `D4c. If days, how many days to get there?`,
+                    school_hours = `D4d. If hours, how many hours to get there?`,
+                    school_mins = `D4e. If minutes, how many minutes to get there?`,
+                    bank_transport = `D5a. How would you get to the Bank?`,
+                    bank_time_unit = `D5b. How long does it take to get there?`,
+                    bank_days = `D5c. If days, how many days to get there?`,
+                    bank_hours = `D5d. If hours, how many hours to get there?`,
+                    bank_mins = `D5e. If minutes, how many minutes to get there?`,
+                    road_transport = `D6a. How would you get to the Operating road [which can be accessed by 4x4 vehicles]?`,
+                    road_days = `D6c. If days, how many days to get there?`,
+                    road_hours = `D6d. If hours, how many hours to get there?`,
+                    road_mins = `D6e. If minutes, how many minutes to get there?`,
+                    pmv_transport = `D7a. How would you get to the PMV pickup point?`,
+                    pmv_days = `D7c. If days, how many days to get there?`,
+                    pmv_hours = `D7d. If hours, how many hours to get there?`,
+                    pmv_mins = `D7e. If minutes, how many minutes to get there?`,
+                    prov_cap_transport = `D8a. How would you get to the Provincial capital?`,
+                    prov_cap_days = `D8c. If days, how many days to get there?`,
+                    prov_cap_hours = `D8d. If hours, how many hours to get there?`,
+                    prov_cap_mins = `D8e. If minutes, how many minutes to get there?`,
+                    dist_cap_transport = `D9a. How would you get to the District capital?`,
+                    dist_cap_days = `D9c. If days, how many days to get there?`,
+                    dist_cap_hours = `D9d. If hours, how many hours to get there?`,
+                    dist_cap_mins = `D9e. If minutes, how many minutes to get there?`,
+                    airstrip_transport = `D10a. How would you get to the Operating air strip?`,
+                    airstrip_days = `D10c. If days, how many days to get there?`,
+                    airstrip_hours = `D10d. If hours, how many hours to get there?`,
+                    airstrip_mins = `D10e. If minutes, how many minutes to get there?`,
+                    closest_reception = `D12. Where is the closest place for mobile phone reception?`,
+                    
+                    # Section E: Inspection/supervision
+                    has_inspector = `E1. Is there a Village Court Inspector for this Village Court?`,
+                    inspector_position = `E2. If yes, what is the Inspector’s position?`,
+                    inspector_position_other = `E2. If yes, what is the Inspector’s position?--OTHER--`,
+                    inspector_visit_2024 = `E3. If yes, did the Inspector visit in 2024?`,
+                    inspector_visit_n = `E3a. If yes, how many times did the Inspector visit in 2024?`,
+                    inspector_last_year = `E4. If no visit in 2024, when was the last time the Inspector visited? [YEAR]`,
+                    inspector_last_activity = `E5. What did the Inspector do during his or her last visit? [MR]`,
+                    inspector_last_activity_other = `E5. What did the Inspector do during his or her last visit? [MR]--OTHER--`,
+                    inspector_feedback = `E6. What was the main kind of feedback was given at the end of that visit?`,
+                    inspector_feedback_other = `E6. What was the main kind of feedback was given at the end of that visit?--OTHER--`,
+                    inspector_change = `E7. Did anything change as a result of the visit?`,
+                    spm_frequency = `E8. How often has the Senior Provincial Magistrate visited this Village Court in 2024?`,
+                    spm_frequency_other = `E8. How often has the Senior Provincial Magistrate visited this Village Court in 2024?--OTHER--`,
+                    spm_visit_2024 = `E9. Has the Senior Provincial Magistrate visited this Village Court in 2024?`,
+                    spm_visit_2024_n = `E9a. If visit, how many times has the Senior Provincial Magistrate visited this Village Court in 2024?`,
+                    spm_last_year = `E10. If nil in 2024, when was the last time the Senior Provincial Magistrate visited? [YEAR]`,
+                    spm_circuit_courts = `E11. Does the Senior Provincial Magistrate conduct circuit courts in the province?`,
+                    
+                    # Section F: Funding
+                    table_fees = `F1. Do people ever have to pay table fees for cases heard by the Village Court?`,
+                    table_fee_amount = `F2. What is the set fee for a case at your Village Court? [in Kina]`,
+                    same_fees = `F3. Does your Court charge the same fees for all kinds of hearings?`,
+                    higher_fee_cases = `F4. If no, which cases have higher fees? [MR]`,
+                    higher_fee_cases_other = `F4. If no, which cases have higher fees? [MR]--OTHER--`,
+                    pop_size_clean = `F5. What is your estimate of the size of the population that this Village Court is responsible for? (cleaned)`,
+                    pop_afford_fees = `F6. What proportion of people, for which this Village Court is responsible for delivering justice services, can afford to pay table fees?`,
+                    pop_no_access = `F7. What proportion of people, for which this Village Court is responsible, do not access the Court because they cannot afford to pay a table fee?`,
+                    unable_pay_response = `F8. What happens when a client/complainant wants a matter/case dealt with is unable to pay table fees? [MR]`,
+                    unable_pay_response_other = `F8. What happens when a client/complainant wants a matter/case dealt with is unable to pay table fees? [MR]--OTHER--`,
+                    keep_fee_records = `F9. Do you keep records of the table fees you collect?`,
+                    monthly_fees_total = `F10. What is the total amount of table fees raised at this Village Court in an average month in 2024?`,
+                    monthly_fees_guess = `F10a. If willing to answer, how much the total amount of table fees raised at this Village Court in an average month in 2024? [best guess]`,
+                    fines_destination = `F11. Where do the fines go that your Court imposes and collects?`,
+                    keep_fine_money = `F12. Do you keep or get back any of the fine money?`,
+                    funding_applied = `F13. Not counting the officials’ pay, has this Village Court apply for any funding in 2024 from the following sources [MR]?`,
+                    funding_applied_other = `F13. Not counting the officials’ pay, has this Village Court apply for any funding in 2024 from the following sources [MR]?--OTHER--`,
+                    funding_received = `F14. Not counting the officials’ pay, has this Village Court received any funding in 2024 from the following sources [MR]?`,
+                    funding_received_other = `F14. Not counting the officials’ pay, has this Village Court received any funding in 2024 from the following sources [MR]?--OTHER--`,
+                    dda_dsip_since_2022 = `F15. Has this Village Court received funding (or support) from the DDA (or DSIP) since the last national election (2022)?`,
+                    dda_dsip_fair = `F16. Do you think DDA/DSIP is a fair system for allocating resources?`,
+                    should_apply_dda = `F18. Should the Village Court apply for DDA/DSIP funding?`,
+                    
+                    # Section G: Costs
+                    highest_cost = `G1. In 2024, what was the biggest cost in running the Village Court?`,
+                    highest_cost_other = `G1. In 2024, what was the biggest cost in running the Village Court?--OTHER--`,
+                    total_costs = `G2. In 2024, what would you estimate the total costs of running this Village Court (excluding the Court officials’ pay)? [in Kina]`,
+                    cost_transport = `G3f. In 2024, how much was spent on transport / fuel? [in Kina] - please write '999' if don't know`,
+                    meet_cost_unpaid_officials = `G4a. How does this Village Court normally meet the costs for paying officials who do not receive their allowances: [MR]`,
+                    meet_cost_unpaid_officials_other = `G4a. How does this Village Court normally meet the costs for paying officials who do not receive their allowances: [MR]--OTHER--`,
+                    meet_cost_joint_sitting = `G4b. How does this Village Court normally meet the costs of joint sittings of Village Courts: [MR]`,
+                    meet_cost_joint_sitting_other = `G4b. How does this Village Court normally meet the costs of joint sittings of Village Courts: [MR]--OTHER--`,
+                    meet_cost_transfer = `G4c. How does this Village Court normally meet the costs of transferring cases to referral District Court: [MR]`,
+                    meet_cost_transfer_other = `G4c. How does this Village Court normally meet the costs of transferring cases to referral District Court: [MR]--OTHER--`,
+                    meet_cost_fuel = `G4d. How does this Village Court normally meet the costs for fuel for transport : [MR]`,
+                    meet_cost_fuel_other = `G4d. How does this Village Court normally meet the costs for fuel for transport : [MR]--OTHER--`,
+                    meet_cost_maintenance = `G4e. How does this Village Court normally meet the costs of basic maintenance of Village Court : [MR]`,
+                    meet_cost_maintenance_other = `G4e. How does this Village Court normally meet the costs of basic maintenance of Village Court : [MR]--OTHER--`,
+                    meet_cost_paperwork = `G4f. How does this Village Court normally meet the costs for Picking up or delivering paperwork/forms: [MR]`,
+                    meet_cost_paperwork_other = `G4f. How does this Village Court normally meet the costs for Picking up or delivering paperwork/forms: [MR]--OTHER--`,
+                    has_bank_account = `G5. Does this Village Court have its own bank account?`,
+                    keep_financial_records = `G6. Does this Village Court keep a cashbook or any form of financial records?`,
+                    travel_bank_cost = `G7. How costly is it for Village Court officials to travel to a bank to get out your allowances?`,
+                    primary_fund_access = `G8. Currently, who has primary access to funds and/or table fees received at this Village Court?`,
+                    primary_fund_access_other = `G8. Currently, who has primary access to funds and/or table fees received at this Village Court?--OTHER--`,
+                    resp_allowances_on_time = `G9. In 2024, did you usually receive your allowances on time?`,
+                    resp_received_pay_2024 = `G11. Have you received your pay that you were eligible for in 2024?`,
+                    resp_other_income = `G12. Do you have other sources of income apart from this job?`,
+                    
+                    # Section H: Community
+                    has_ljc = `H1. Currently, is there a Law and Justice Committee  or Peace and Good Order Committee that supports this Village Court?`,
+                    ljc_attendance = `H3. What proportion of the community attends Law and Justice Committee  or Peace and Good Order Committee meetings?`,
+                    spm_community_meet = `H4. In 2024, did the Senior Provincial Magistrate ever meet with the community to discuss crime, safety and justice issues?`,
+                    community_support = `H6. In 2024 how much did the local community support the Village Court?`,
+                    awareness_activities = `H7. In 2024, did the Village Court officials assist with awareness raising activities in the community?`,
+                    
+                    # Section I: Cases
+                    total_cases = `I1. In 2024, how many cases in total did this Village Court deal with?`,
+                    cases_theft = `I2a. In 2024, could you estimate how many theft and property damage cases this Village Court dealt with?`,
+                    cases_insults = `I2b. In 2024, could you estimate how many insults or spreading false reports this Village Court dealt with?`,
+                    cases_clan_conflict = `I2c. In 2024, could you estimate how many clan/tribe conflict and fighting this Village Court dealt with?`,
+                    cases_domestic = `I2d. In 2024, could you estimate how many domestic or family violence this Village Court dealt with?`,
+                    cases_sorcery = `I2e. In 2024, could you estimate how many sorcery related offences this Village Court dealt with?`,
+                    cases_weapons = `I2f. In 2024, could you estimate how  many weapon related offences this Village Court dealt with?`,
+                    cases_homebrew = `I2g. In 2024, could you estimate how  many home brew related offences this Village Court dealt with?`,
+                    cases_drugs = `I2h. In 2024, could you estimate how many drug cases this Village Court dealt with?`,
+                    cases_sexual = `I2i. In 2024, could you estimate how many sexual violence this Village Court dealt with?`,
+                    cases_homicide = `I2j. In 2024, could you estimate how many homicide cases this Village Court dealt with?`,
+                    cases_family = `I3a. In 2024, could you estimate how many family matters e.g. separation, custody cases (that relate to civil matters) this Village Court dealt with?`,
+                    cases_land = `I3b. In 2024, could you estimate how many land matters this Village Court dealt with?`,
+                    outcome_full_court = `I4a. In 2024, can you estimate how many of the cases resulted in settled by the full court?`,
+                    outcome_mediation = `I4b. In 2024, can you estimate how many of the cases resulted in settled by mediation?`,
+                    outcome_refer_police = `I4c. In 2024, can you estimate how many of the cases resulted in referral to the police?`,
+                    outcome_refer_land = `I4d. In 2024, can you estimate how many of the cases resulted in referral to the Land Court?`,
+                    outcome_refer_district = `I4e. In 2024, can you estimate how many of the cases resulted in referral to the District Court?`,
+                    outcome_refer_family = `I4f. In 2024, can you estimate how many of the cases resulted in referral to the family?`,
+                    outcome_refer_church = `I4g. In 2024, can you estimate how many of the cases resulted in referral to the church?`,
+                    outcome_refer_support = `I4h. In 2024, can you estimate how many of the cases resulted in referral to health, community or support services?`,
+                    order_preventive = `I5a. In 2024, of the cases that were settled by the full court, how many resulted in preventive order?`,
+                    order_ipo = `I5b. In 2024, of the cases that were settled by the full court, how many resulted in Interim Protection Order (IPO)?`,
+                    order_community_work = `I5c. In 2024, of the cases that were settled by the full court, how many resulted in community work?`,
+                    order_fine = `I5d. In 2024, of the cases that were settled by the full court, how many resulted in fine?`,
+                    order_imprisonment = `I5e. In 2024, of the cases that were settled by the full court, how many resulted in imprisonment order?`,
+                    order_compensation = `I5f. In 2024, of the cases that were settled by the full court, how many resulted in compensation?`,
+                    order_other = `I5g. In 2024, of the cases that were settled by the full court, how many resulted in other orders?`,
+                    
+                    # Section J: Improvements
+                    improve_first_other = `J1a. If this Village Court had extra funds to spend, in your view what would be THE FIRST most important things that would improve your Court?--OTHER--`,
+                    improve_second = `J1b. If this Village Court had extra funds to spend, in your view what would be THE SECOND most important things that would improve your Court?`,
+                    improve_second_other = `J1b. If this Village Court had extra funds to spend, in your view what would be THE SECOND most important things that would improve your Court?--OTHER--`,
+                    improve_third = `J1c. If this Village Court had extra funds to spend, in your view what would be THE THIRD most important things that would improve your Court?`,
+                    improve_third_other = `J1c. If this Village Court had extra funds to spend, in your view what would be THE THIRD most important things that would improve your Court?--OTHER--`,
+                    spend_1000k_desc = `J2. If the Village Court was given 1000kina, how do think the Village Court should spend that money to help and improve the Village Court?`
+                )
+        }
+
+        # Apply to both magistrate and clerk datasets
+        justice_magistrate <- justice_magistrate %>% rename_mag_clerk()
+        justice_clerk <- justice_clerk %>% rename_mag_clerk()
+
+
+    # rename function for community dataset
+        justice_community <- justice_community %>%
+            rename(
+                # Basic identifiers
+                nearest_police = `Nearest police station or post (pick one):`,
+                
+                # Section A: Respondent characteristics
+                resp_gender = `A1. Gender of respondent:`,
+                resp_age = `A2. Age of respondent:`,
+                has_disability = `A3. Do you identify as a person with a disability?`,
+                community_role = `A5. Role or position in this community:`,
+                community_role_other = `A5. Role or position in this community:--OTHER--`,
+                education_level = `A6. Highest educational qualification:`,
+                from_district = `A7. Are you from this District?`,
+                justice_remoteness = `A8. How remote do you think the local justice services are? (compared to the rest of the country)`,
+                speak_local = `A9. Can you speak the local tok ples in this community?`,
+                last_attend_court = `A10. When did you last attend the Village Court?`,
+                last_contact_police = `A11. When did you last contact the nearest police station/post?`,
+                leaders_contact_police = `A12. Did the community leaders here contact the nearest police station/post in the past year?`,
+                ties_court = `A13. Do you have any personal ties or connections with this Village Court officials?`,
+                ties_police = `A14. Do you have any ties or connections with the nearest police station/post?`,
+                
+                # Section B: Court and police characteristics
+                hearing_frequency = `B1. How often does the Village Court usually hear cases?`,
+                hearing_frequency_other = `B1. How often does the Village Court usually hear cases?--OTHER--`,
+                set_sitting_day = `B2. Is there a set day that the Village Court sits?`,
+                police_regular_hours = `B3. Does the nearest police station or post have regular hours?`,
+                police_24_7 = `B4. Can you contact the police 24/7?`,
+                police_hours_daily = `B5. How many hours a day is the station/post usually open during the week? [write number of hours in a day]`,
+                time_to_police = `B6. How long does it take you to get to the nearest police station or post?`,
+                time_to_police_other = `B6. How long does it take you to get to the nearest police station or post?--OTHER--`,
+                court_busy = `B7. How busy is the Village Court?`,
+                court_busy_other = `B7. How busy is the Village Court?--OTHER--`,
+                police_busy = `B8. How busy is the nearest police station/post ?`,
+                police_busy_other = `B8. How busy is the nearest police station/post ?--OTHER--`,
+                n_court_officials = `B9. How many Village Court officials regularly hear cases in your Village court?`,
+                n_police = `H10. How many police regularly work at the nearest police station/post?`,
+                court_state = `B11. In what state is your Village Court? (building or designated area)`,
+                police_state = `B12. In what state is the nearest police station/post?`,
+                barracks_state = `B13. In what state are the houses or barracks provided by the RPNGC?`,
+                
+                # Section C: Costs and funding
+                table_fee_avg = `C1. How much do people pay on average for a Village Court hearing as a table fee? in Kina [please write '999' if don’t know]`,
+                same_fees = `C2. Does your Village Court charge the same fees for all kinds of hearings?`,
+                higher_fee_cases = `C3. If no, which cases have higher fees?`,
+                police_fuel_cost = `C4. How much do you have to pay for the fuel money on average for the nearest police station or post to respond? - in Kina [please write '999' if don’t know]`,
+                opinion_table_fees = `C5. What do think about the current table fees charged by your Village Court?`,
+                opinion_police_fees = `C6. What do you think about the current amounts asked by the nearest police station/post to help pay for fuel and other things?`,
+                court_costs_met = `C7. How is the recurrent operational costs (not allowances) of the Village Court being met at present? [MR]`,
+                police_costs_met = `C8. How is the recurrent operational costs (not salaries) of the police being met at present? [MR]`,
+                politicians_helped_court = `C9. Have politicians (eg. Governor, open MP, LLG president, Ward councillor) helped your Village Court since the last election?`,
+                court_funds_use = `C10. If yes, what were the funds used for? [MR]`,
+                politicians_helped_police = `C11. Have politicians (eg. Governor, open MP, LLG president, Ward councillor) helped the nearest police station/post since the last election?`,
+                police_funds_use = `C12. If yes, what were the funds used for? [MR]`,
+                improve_court = `C13. What would help improve the Village Court? [Choose 3] [MR]`,
+                improve_police = `C14. What would help improve the nearest police station or post? [Choose 3] [MR]`,
+                court_funding_source = `C15. Who should provide funds to the Village Court? [Choose 2] [MR]`,
+                police_funding_source = `C16. Who should provide funds to the nearest police station/post? [Choose 2] [MR]`,
+                
+                # Section D: Performance and satisfaction
+                court_rating = `D1. How would you and your family rate your Village Court in handling disputes?`,
+                court_cases_well = `D2. What kind of cases does your Village Court deal with well? [MR] [Include all that are mentioned]`,
+                court_respect = `D3. How much of the community here respects your Court’s decisions?`,
+                happy_with_court = `D4. Are you and your family happy with the Village Court?`,
+                court_problems = `D5. What do you think are the biggest problems with the Village Court? [Choose 3] [MR]`,
+                police_rating = `D6. How would you and your family rate the nearest police station/post in handling disputes?`,
+                police_cases_well = `D7. Which kind of cases does the the nearest police station/post deal with well? [MR] [Include all that are mentioned]`,
+                police_respect = `D8. How much of the community here respects the police at the nearest station/post?`,
+                happy_with_police = `D9. Are you and your family happy with the nearest police station/post?`,
+                police_problems = `D10. What do you think are the biggest problems with the nearest police station/post? [List the 3 mentioned] [MR]`,
+                community_problems = `D11. What are the biggest law and order problems faced by the local community?`,
+                safety_night = `D12. How safe do you feel walking alone at night in your local community?`,
+                safety_change = `D13. Since the last national election, do you believe that local people’s feelings of safety has got better or worse?`,
+                help_small_wrong = `D14. If you or your family have been wronged (little wrong), who would you go to for help? [MR]`,
+                help_big_wrong = `D15. If you or your family have been wronged (big wrong), who would you go to for help? [MR]`,
+                
+                # Section E: Community engagement
+                has_ljc = `E1. Currently, is there a Law and Justice Committee or Peace and Good Order Committee that supports this Village Court and the nearest police station/post?`,
+                ljc_attendance = `E3. If yes, what proportion of the community attends Law and Justice Committee or Peace and Good Order Committee meetings?`,
+                court_calls_meetings = `E4. Do the Village Court officials ever call a community meeting?`,
+                police_call_meetings = `E5. Do the police at the nearest station/post ever call a community meeting?`,
+                community_support_court = `E6. In 2024 how much did the local community support this Village Court?`,
+                community_support_police = `E7. In 2024 how much did the local community support the nearest police station/post?`
+            )
+
+    # rename function for police dataset
+        justice_police <- justice_police %>%
+            rename(
+                # Basic identifiers
+                police_station = `Police Station / Post:`,
+                
+                # Section A: Respondent characteristics
+                resp_gender = `A2. Gender of respondent:`,
+                resp_age = `A3. Age of respondent (record the mid-point if they give a range):`,
+                is_oic = `A4. Are you the Office in Charge for this station/post?`,
+                position = `A5. If no, what is your position?`,
+                position_other = `A5. If no, what is your position?--OTHER--`,
+                oic_gender = `A6. What is the gender of the OIC?`,
+                from_district = `A7. Are you from this District?`,
+                speak_local = `A8. Can you speak the local tok ples in this community?`,
+                years_worked = `A9. How many years have you worked in this police station/post?`,
+                assignment_method = `A10. How were you assigned to the Station/post?`,
+                assignment_method_other = `A10. How were you assigned to the Station/post?--OTHER--`,
+                want_remain = `A11. Do you want to remain at the station/post next year?`,
+                police_grade = `A12. Currently, what is your official police grade?`,
+                paid_at_grade = `A13. Are you being paid at that grade?`,
+                
+                # Section B: Station characteristics & staffing
+                remoteness = `B1. How remote is this police station/post?`,
+                facility_type = `B2. Type of police facility:`,
+                facility_type_other = `B2. Type of police facility:--OTHER--`,
+                facilities_other = `B3. What buildings or facilities does this police station/post have? [MR]--OTHER--`,
+                n_officers = `B4a. Currently, how many police officers work at this police station/post?`,
+                n_reservists = `B4b. Currently, how many police reservists work at this police station/post?`,
+                n_auxiliaries = `B4c. Currently, how many police auxiliaries work at this police station/post?`,
+                n_office_staff = `B4d. Currently, how many office staff (civilians) work at this police station/post?`,
+                n_other_personnel = `B4d. Currently, how many other personnel work at this police station/post?`,
+                n_women_officers = `B5. How many of these police officers are women?`,
+                n_regular_attend = `B6. How many of the police regularly turn up for work at this station/post?`,
+                n_away_2days = `B7. In the past month, how many police at the station/post were away for more than two consecutive working days?`,
+                away_reasons = `B8. What are the three main reasons that staff are away at this police station/post? [MR] - choose 3 main reasons`,
+                away_reasons_other = `B8. What are the three main reasons that staff are away at this police station/post? [MR] - choose 3 main reasons--OTHER--`,
+                pay_on_time = `B9. In 2024, have the police staff at your station/post usually received their pay on time?`,
+                allowances_paid = `B10. Have the police staff been paid the other duty allowances that they were eligible for in 2024?`,
+                other_income = `B11. Do the police officers here have other sources of income apart from this job?`,
+                other_income_time = `B12. If yes, how much of their time is taken up with these other sources of income?`,
+                other_income_desc = `B13. If yes, please describe these sources of income:`,
+                last_training_year = `B14. When was the last time any of the police officers attended a training course? YEAR`,
+                training_desc = `B15. Please describe any training that the police officers here have attended since the last national election (since 2022):`,
+                open_days_per_week = `B16. How many days a week is this Station/post usually open? [write number of days]`,
+                open_hours_per_day = `B17. How many hours a day does the Station/post usually open? [write number of hours]`,
+                visitors_per_day = `B18. How many people/the general public are seen in a typical day at this station/post in total?`,
+                calls_per_day = `B19. How many phone calls, in total, does this station/post receive in a typical day?`,
+                staff_safety = `B20. How safe do police staff at this police station/post feel when doing their duties?`,
+                safety_change = `B21. Do you think this station/post’s staff are safer or less safe compared to three years ago (since the last national election)?`,
+                keep_occurrence_book = `B22. Does this station/post keep an up to date Occurrence Book?`,
+                keep_other_records = `B23. Does this station/post keep any other records of its cases?`,
+                send_records_where = `B25. In 2024, did you send records/statistics to one of more of the following centres. [MR]`,
+                
+                # Section C: Facilities & infrastructure
+                n_buildings_total = `C1. What are the total number of buildings at this station/post?`,
+                n_station_buildings = `C2a1. How many station building are there at this station/post?`,
+                n_station_rebuild = `C2a2. How many station building are in such a bad state that they need to be completely rebuilt?`,
+                n_station_major = `C2a3. How many station building are in such a bad state that they need  major maintenance?`,
+                n_station_some = `C2a4. How many station building are in such a state that they need some maintenance?`,
+                n_station_suitable = `C2a5. How many station building are in a suitable condition?`,
+                n_lockup = `C2b1. How many lock up or cells are there at this station/post?`,
+                n_lockup_rebuild = `C2b2. How many lock up or cells are in such a bad state that they need to be completely rebuilt?`,
+                n_lockup_major = `C2b3. How many lock up or cells are in such a bad state that they need  major maintenance?`,
+                n_lockup_some = `C2b4. How many lock up or cells are in such a state that they need some maintenance?`,
+                n_lockup_suitable = `C2b5. How many lock up or cells are in a suitable condition?`,
+                n_compound = `C2c1. How many compound for vehicles etc are there at this station/post?`,
+                n_compound_rebuild = `C2c2. How many compound for vehicles etc are in such a bad state that they need to be completely rebuilt?`,
+                n_compound_major = `C2c3. How many compound for vehicles etc are in such a bad state that they need  major maintenance?`,
+                n_compound_some = `C2c4. How many compound for vehicles etc are in such a state that they need some maintenance?`,
+                n_compound_suitable = `C2c5. How many compound for vehicles etc are in a suitable condition?`,
+                n_police_housing_total = `C3. What are the total number of police houses/units (provided by the RPNGC) at this station/post?`,
+                n_police_houses = `C4a1. How many police houses are there at this station/post?`,
+                n_police_houses_rebuild = `C4a2. How many police houses are in such a bad state that they need to be completely rebuilt?`,
+                n_police_houses_major = `C4a3. How many police houses are in such a bad state that they need  major maintenance?`,
+                n_police_houses_some = `C4a4. How many police houses are in such a state that they need some maintenance?`,
+                n_police_houses_suitable = `C4a5. How many police houses are in a suitable condition?`,
+                n_police_units = `C4b1. How many police units (eg barracks) are there at this station/post?`,
+                n_police_units_rebuild = `C4b2. How many police units (eg barracks) are in such a bad state that they need to be completely rebuilt?`,
+                n_police_units_major_maintenance = `C4b3. How many police units (eg barracks) are in such a bad state that they need  major maintenance?`,
+                n_police_units_some_maintenance = `C4b4. How many police units (eg barracks) are in such a state that they need some maintenance?`,
+                n_police_units_suitable_condition = `C4b5. How many police units (eg barracks) are in a suitable condition?`,
+                n_own_accom = `C4c1. How many police living in their own accommodation (e.g. self-owned, rental, family) are there at this station/post?`,
+                n_own_accom_rebuild = `C4c2. How many police living in their own accommodation (e.g. self-owned, rental, family) are in such a bad state that they need to be completely rebuilt?`,
+                n_own_accom_major_maintenance = `C4c3. How many police living in their own accommodation (e.g. self-owned, rental, family) are in such a bad state that they need  major maintenance?`,
+                n_own_accom_some_maintenance = `C4c4. How many police living in their own accommodation (e.g. self-owned, rental, family) are in such a state that they need some maintenance?`,
+                n_own_accom_suitable_condition = `C4c5. How many police living in their own accommodation (e.g. self-owned, rental, family) are in a suitable condition?`,
+                has_electricity = `C5. Does this police station/post have electricity?`,
+                power_supply = `C6. If yes, how is the power supplied? [tick all that apply]`,
+                power_supply_other = `C6. If yes, how is the power supplied? [tick all that apply]--OTHER--`,
+                n_attacks_2024 = `C7. How many times was this station/post attacked or broken into in 2024?`,
+                water_source = `C8. What is the main source of drinking water for the police station/post?`,
+                water_available_today = `C9. Is water available from that source today?`,
+                water_available_year = `C10. If yes, has that water been available from this source for all this year?`,
+                toilet_type = `C11. What is the main type of toilet facilities?`,
+                flush_working = `C12. If flush toilets, are they working today?`,
+                enough_toilets_detainees = `C13. Are there enough toilets for detainees in the police cells?`,
+                toilets_needed = `C14. If no, how many more are needed?`,
+                avail_vehicles = `C15a. What is the availability of vehicle/s at this station/post?`,
+                avail_uniforms = `C15b. What is the availability of uniforms at this station/post?`,
+                avail_tables = `C15c. What is the availability of tables at this station/post?`,
+                avail_chairs = `C15d. What is the availability of chairs at this station/post?`,
+                avail_record_books = `C15e. What is the availability of record books (eg Occurrence Book) and forms at this station/post?`,
+                avail_stationery = `C15f. What is the availability of stationary at this station/post?`,
+                avail_computers = `C15g. What is the availability of computers and printers at this station/post?`,
+                avail_firearms = `C15h. What is the availability of firearms at this station/post?`,
+                avail_handcuffs = `C15i. What is the availability of handcuffs at this station/post?`,
+                avail_vests = `C15j. What is the availability of vests at this station/post?`,
+                avail_internet = `C15l. What is the availability of internet connectivity at this station/post?`,
+                avail_radios = `C15m. What is the availability of radios at this station/post?`,
+                
+                # Section D: Access to services
+                health_transport = `D1a1. How would you get to the health facilities?`,
+                health_mins = `D1a5. If minutes, how many minutes in total?`,
+                safehouse_transport = `D1b1. How would you get to the safe house?`,
+                safehouse_days = `D1b3. If days, how many days in total?`,
+                safehouse_hours = `D1b4. If hours, how many hours in total?`,
+                safehouse_mins = `D1b5. If minutes, how many minutes in total?`,
+                village_court_transport = `D1c1. How would you get to the Village Court?`,
+                village_court_hours = `D1c4. If hours, how many hours in total?`,
+                village_court_mins = `D1c5. If minutes, how many minutes in total?`,
+                dist_court_transport = `D1d1. How would you get to the District Court?`,
+                dist_court_days = `D1d3. If days, how many days in total?`,
+                dist_court_hours = `D1d4. If hours, how many hours in total?`,
+                dist_court_mins = `D1d5. If minutes, how many minutes in total?`,
+                school_transport = `D1e1. How would you get to the Primary/Community School?`,
+                school_hours = `D1e4. If hours, how many hours in total?`,
+                school_mins = `D1e5. If minutes, how many minutes in total?`,
+                bank_transport = `D1f1. How would you get to the Bank?`,
+                bank_days = `D1f3. If days, how many days in total?`,
+                bank_hours = `D1f4. If hours, how many hours in total?`,
+                bank_mins = `D1f5. If minutes, how many minutes in total?`,
+                prov_cap_transport = `D1g1. How would you get to the Provincial Capital?`,
+                prov_cap_days = `D1g3. If days, how many days in total?`,
+                prov_cap_hours = `D1g4. If hours, how many hours in total?`,
+                prov_cap_mins = `D1g5. If minutes, how many minutes in total?`,
+                dist_cap_transport = `D1h1. How would you get to the District Capital?`,
+                dist_cap_days = `D1h3. If days, how many days in total?`,
+                dist_cap_hours = `D1h4. If hours, how many hours in total?`,
+                dist_cap_mins = `D1h5. If minutes, how many minutes in total?`,
+                airstrip_transport = `D1i1. How would you get to the operating air strip?`,
+                airstrip_days = `D1i3. If days, how many days in total?`,
+                airstrip_hours = `D1i4. If hours, how many hours in total?`,
+                airstrip_mins = `D1i5. If minutes, how many minutes in total?`,
+                closest_reception = `D2. Where is the closest place for mobile phone reception?`,
+                
+                # Section E: Inspection/supervision
+                has_inspector = `E1. Is there an Inspector for this police station/post?`,
+                inspector_position = `E2. If yes, what is the Inspector’s position?`,
+                inspector_position_other = `E2. If yes, what is the Inspector’s position?--OTHER--`,
+                inspector_frequency = `E3. How often did the Inspector visit in 2024?`,
+                inspector_visit_n = `E3a. If visit, how many times did the supervisor visit in 2024?`,
+                inspector_last_year = `E4. If nil in 2024, in which year was the last time the Inspector visited?`,
+                inspector_activity = `E5. What did the Inspector do during his or her last visit? [MR]`,
+                inspector_feedback = `E6. What was the main kind of feedback was given at the end of that visit?`,
+                inspector_feedback_other = `E6. What was the main kind of feedback was given at the end of that visit?--OTHER--`,
+                inspector_change = `E7. Did anything change as a result of the visit?`,
+                commander_frequency = `E8. How often has the Provincial Commander visited this police station/post?`,
+                commander_frequency_other = `E8. How often has the Provincial Commander visited this police station/post?--OTHER--`,
+                commander_visit_2024 = `E9. Has the Provincial Commander visited this station/post in 2024?`,
+                commander_visit_n = `E9a. If visits, how many times has the Provincial Commander visited this station/post in 2024?`,
+                commander_last_visit = `E10. If nil, when was the last time a Provincial Commander visited this station/post? [Month  /  Year]`,
+                
+                # Section F: Funding
+                has_budget = `F1. Does this police station/post have an annual operating budget?`,
+                budget_submitted = `F2. If yes, where is the budget submitted? [MR]`,
+                budget_submitted_other = `F2. If yes, where is the budget submitted? [MR]--OTHER--`,
+                need_help_callouts = `F5a. Does this station/post need help from people/clients to pay for call outs, fuel costs?`,
+                need_help_patrols = `F5b. Does this station/post need help from people/clients to pay for patrols, fuel costs?`,
+                need_help_vehicle = `F5c. Does this station/post need help from people/clients to pay for vehicle/s or vehicle repairs?`,
+                need_help_complaint = `F5d. Does this station/post need help from people/clients to pay for lodging a complaint?`,
+                need_help_victim_transport = `F5e. Does this station/post need help from people/clients to pay for transporting a victim to health or support services?`,
+                need_help_defendant_transport = `F5f. Does this station/post need help from people/clients to pay for transporting a defendant to prison or District Court?`,
+                need_help_escort = `F5g. Does this station/post need help from people/clients to pay for escort?`,
+                need_help_security = `F5h. Does this station/post need help from people/clients to pay for security at events?`,
+                need_help_other = `F5i. Does this station/post need help from people/clients to pay for other cost?`,
+                other_cost_desc = `Please specify the other cost:`,
+                keep_fee_records = `F6. Do you keep records of the money/fees you collect?`,
+                monthly_fees_avg = `F7. What is the total amount of money/fees raised at this Station/post in an average month in 2024? [if memory then best guess]`,
+                pop_size = `F8. What is your estimate of the size of the population that this Station/post is responsible for? [Estimate; record mid-point if give a range]`,
+                pop_afford_fees = `F9. What proportion of people, for which this Station/post is responsible for delivering justice services, can afford to pay fees/help with costs?`,
+                pop_no_access = `F10. What proportion of people, for which this Station/post is responsible, do not access the police  because they cannot afford to pay a fee or help with costs?`,
+                unable_pay_response = `F11. What happens when a client/complainant wants a matter/case dealt with is unable to pay fees or cannot help with costs? [MR]`,
+                unable_pay_response_other = `F11. What happens when a client/complainant wants a matter/case dealt with is unable to pay fees or cannot help with costs? [MR]--OTHER--`,
+                exemptions = `F12. Who gets exempted from paying fees or helping with costs?`,
+                exemptions_other = `F12. Who gets exempted from paying fees or helping with costs?--OTHER--`,
+                intro_funding = `READ ALOUD: Now I would like to ask you about how much financial support, including in-kind support, did you receive in 2024 from the following sources. To start...`,
+                funding_natl_govt = `F13a. How much financial support, including in-kind support, did you receive in 2024 from the National Government development funds for a project? - in Kina`,
+                funding_prov_govt = `F13b. How much financial support, including in-kind support, did you receive in 2024 from the Provincial Government – Development Grants? - in Kina`,
+                funding_dsip = `F13c. How much financial support, including in-kind support, did you receive in 2024 from the District Services Improvement Program Funding - DSIP / Open MP District Funding? - in Kina`,
+                funding_llg = `F13d. How much financial support, including in-kind support, did you receive in 2024 from the Local Level Government or Ward? - in Kina`,
+                funding_church = `F13e. How much financial support, including in-kind support, did you receive in 2024 from the Church organisations – donation or grant? - in Kina`,
+                funding_ngo = `F13f. How much financial support, including in-kind support, did you receive in 2024 from the Non-Government Organisations (NGOs)? - in Kina`,
+                funding_politicians = `F13g. How much financial support, including in-kind support, did you receive in 2024 from the Local politicians (Such as LLG President or Ward Counsellor)? - in Kina`,
+                funding_donors = `F13h. How much financial support, including in-kind support, did you receive in 2024 from the Donor aid agencies (Such as DFAT- PNG-APP, APLJP; EU)? - in Kina`,
+                funding_private = `F13i. How much financial support, including in-kind support, did you receive in 2024 from the Private institutions and companies such as resource companies? - in Kina`,
+                funding_fundraising = `F13j. How much financial support, including in-kind support, did you receive in 2024 from Fundraising activities? - in Kina`,
+                funding_community = `F13k. How much financial support, including in-kind support, did you receive in 2024 from Community support? - in Kina`,
+                funding_other = `F13j. How much financial support, including in-kind support, did you receive in 2024 from other sources? - in Kina`,
+                keep_bail_records = `F14. Does this police station/post keep records of the bail money it collects?`,
+                bail_destination = `F15. Where does the bail money go?`,
+                dda_dsip_since_2022 = `F16. Has this police station/post received funding (or support) from the DDA (or DSIP) since the last national election (2022)?`,
+                dda_dsip_completed = `F16f. Has the DDA/DSIP project been delivered or completed in full and on time?`,
+                dda_dsip_fair = `F17. Do you think DDA/DSIP is a fair system for allocating resources?`,
+                should_apply_dda = `F19. Should your police station/post apply for DDA/DSIP funding?`,
+                credit_frequency = `F20. Does often does this police station/post have to ask business houses to provide cash or supplies on credit?`,
+                
+                # Section G: Costs
+                highest_cost = `G1. In 2024, what was the biggest cost in running this police station/post?`,
+                highest_cost_other = `G1. In 2024, what was the biggest cost in running this police station/post?--OTHER--`,
+                total_costs = `G2. In 2024, what would you estimate the total costs of running this station/post (excluding staff salaries and allowances)? - in Kina`,
+                cost_maintenance = `G3a. In 2024, how much was spent on the maintenance of building/s (if have one)? -in Kina`,
+                cost_uniforms = `G3b. In 2024, how much was spent on uniforms? -in Kina`,
+                cost_equipment = `G3c. In 2024, how much was spent on basic equipment eg computers, table and chairs? -in Kina`,
+                cost_supplies = `G3d. In 2024, how much was spent on office supplies eg receipt books, forms? -in Kina`,
+                cost_firearms = `G3e. In 2024, how much was spent on firearms? -in Kina`,
+                cost_staff = `G3f. In 2024, how much was spent on extra staff? -in Kina`,
+                cost_transport = `G3g. In 2024, how much was spent on transport/fuel? -in Kina`,
+                meet_cost_callouts = `G4a. How does this police station/post normally meet the costs of funding responses to call outs: [MR]`,
+                meet_cost_callouts_other = `G4a. How does this police station/post normally meet the costs of funding responses to call outs: [MR]--OTHER--`,
+                meet_cost_transport_people = `G4b. How does this police station/post normally meet the costs of transporting defendants, victims or witnesses: [MR]`,
+                meet_cost_transport_people_other = `G4b. How does this police station/post normally meet the costs of transporting defendants, victims or witnesses: [MR]--OTHER--`,
+                meet_cost_transfer = `G4c. How does this police station/post normally meet the costs of transferring cases to District Court: [MR]`,
+                meet_cost_transfer_other = `G4c. How does this police station/post normally meet the costs of transferring cases to District Court: [MR]--OTHER--`,
+                meet_cost_fuel = `G4d. How does this police station/post normally meet the costs of fuel for transport or generator: [MR]`,
+                meet_cost_fuel_other = `G4d. How does this police station/post normally meet the costs of fuel for transport or generator: [MR]--OTHER--`,
+                meet_cost_utilities = `G4e. How does this police station/post normally meet the costs of paying for or maintain public utilities – costs of power, water: [MR]`,
+                meet_cost_utilities_other = `G4e. How does this police station/post normally meet the costs of paying for or maintain public utilities – costs of power, water: [MR]--OTHER--`,
+                meet_cost_building = `G4f. How does this police station/post normally meet the costs of basic maintenance of building/s : [MR]`,
+                meet_cost_building_other = `G4f. How does this police station/post normally meet the costs of basic maintenance of building/s : [MR]--OTHER--`,
+                meet_cost_vehicle = `G4g. How does this police station/post normally meet the costs of repairs and maintenance of vehicle/s: [MR]`,
+                meet_cost_vehicle_other = `G4g. How does this police station/post normally meet the costs of repairs and maintenance of vehicle/s: [MR]--OTHER--`,
+                meet_cost_phone = `G4h. How does this police station/post normally meet the costs of telephone calls: [MR]`,
+                meet_cost_phone_other = `G4h. How does this police station/post normally meet the costs of telephone calls: [MR]--OTHER--`,
+                meet_cost_escorts = `G4i. How does this police station/post normally meet the costs of escorts: [MR]`,
+                meet_cost_escorts_other = `G4i. How does this police station/post normally meet the costs of escorts: [MR]--OTHER--`,
+                meet_cost_security = `G4j. How does this police station/post normally meet the costs of security at events: [MR]`,
+                meet_cost_security_other = `G4j. How does this police station/post normally meet the costs of security at events: [MR]--OTHER--`,
+                meet_cost_patrols = `G4k. How does this police station/post normally meet the costs of patrols: [MR]`,
+                meet_cost_patrols_other = `G4k. How does this police station/post normally meet the costs of patrols: [MR]--OTHER--`,
+                meet_cost_awareness = `G4l. How does this police station/post normally meet the costs of awareness raising activities: [MR]`,
+                meet_cost_awareness_other = `G4l. How does this police station/post normally meet the costs of awareness raising activities: [MR]--OTHER--`,
+                meet_cost_other = `G4m. How does this police station/post normally meet the costs of other activities: [MR]`,
+                has_bank_account = `G5. Does this police station/post have its own bank account?`,
+                keep_financial_records = `G6. Does this police station/post keep a cashbook or any form of financial records?`,
+                travel_bank_cost = `G7. How costly is it for this station/post’s staff to travel to a bank to get out your allowances?`,
+                primary_fund_access = `G8. Currently, who has primary access to funds and/or fees received at this police station/post?`,
+                
+                # Section H: Community engagement
+                has_ljc = `H1. Currently, is there a Law and Justice Committee or Peace and Good Order Committee that supports this police station/post?`,
+                ljc_last_met = `H2. If yes, do you know when the Law and Justice Committee or Peace and Good Order Committee last met? write YEAR`,
+                ljc_attendance = `H3. If yes, what proportion of the community attends Law and Justice Committee or Peace and Good Order Committee meetings?`,
+                commander_community_meet = `H4. In 2024, did the Provincial Commander ever meet with the community to discuss crime, safety and justice issues?`,
+                commander_meet_attendance = `H5. If yes, what proportion of the community attends?`,
+                community_support = `H6. In 2024 how much did the local community support this police station/post?`,
+                awareness_activities = `H7. In 2024, did this police station/post undertake or assist with awareness raising activities in the community?`,
+                awareness_desc = `H8. If yes, what were they?`,
+                social_media_group = `H9. As part of your work, do you belong to a social media group (eg via FB or Whats App) that deals with law and justice issues?`,
+                social_media_desc = `H10. If yes, please describe the membership and purpose of the group:`,
+                
+                # Section I: Cases
+                total_cases = `I1. In 2024, how many cases in total did this police station/post deal with?`,
+                cases_abduction = `I2a. In 2024, could you estimate how many abduction case this police station/post dealt with:`,
+                cases_arson = `I2b. In 2024, could you estimate how many arson case this police station/post dealt with:`,
+                cases_stealing = `I2c. In 2024, could you estimate how many stealing case this police station/post dealt with:`,
+                cases_property_damage = `I2d. In 2024, could you estimate how many property damage case this police station/post dealt with:`,
+                cases_alcohol = `I2e. In 2024, could you estimate how many alcohol case this police station/post dealt with:`,
+                cases_drugs = `I2f. In 2024, could you estimate how many drug offences case this police station/post dealt with:`,
+                cases_cyber = `I2g. In 2024, could you estimate how many cyber offences (online offences) case this police station/post dealt with:`,
+                cases_child_abuse = `I2h. In 2024, could you estimate how many child abuse case this police station/post dealt with:`,
+                cases_traffic = `I2i. In 2024, could you estimate how many traffic offences case this police station/post dealt with:`,
+                cases_firearms = `I2j. In 2024, could you estimate how many firearm offences case this police station/post dealt with:`,
+                cases_domestic = `I2k. In 2024, could you estimate how many domestic violence case this police station/post dealt with:`,
+                cases_public_order = `I2l. In 2024, could you estimate how many public order case this police station/post dealt with:`,
+                cases_assault = `I2m. In 2024, could you estimate how many violent offences/assault case this police station/post dealt with:`,
+                cases_robbery = `I2n. In 2024, could you estimate how many armed robbery case this police station/post dealt with:`,
+                cases_sexual = `I2o. In 2024, could you estimate how many sexual offences case this police station/post dealt with:`,
+                cases_homicide = `I2p. In 2024, could you estimate how many homicide case this police station/post dealt with:`,
+                cases_other = `I2p. In 2024, could you estimate how many other case this police station/post dealt with:`,
+                cases_other_desc = `I2q. If other case, please specify:`,
+                cases_family = `I3a. In 2024, could you estimate how many of the family matters e.g. separation, custody this police station/post dealt with:`,
+                cases_land = `I3b. In 2024, could you estimate how many of the land matters this police station/post dealt with:`,
+                outcome_warning = `I4a. In 2024, can you estimate the total number of cases that resulted in issued a warning:`,
+                outcome_mediation = `I4b. In 2024, can you estimate the total number of cases that resulted in settled by mediation:`,
+                outcome_summons = `I4c. In 2024, can you estimate the total number of cases that resulted in summons issued by the police:`,
+                outcome_arrest = `I4d. In 2024, can you estimate the total number of cases that resulted in arrest by the police:`,
+                outcome_prosecution = `I4e. In 2024, can you estimate the total number of cases that resulted in prosecution by the police:`,
+                outcome_refer_prosecution = `I4f. In 2024, can you estimate the total number of cases that resulted in referral to public prosecutions:`,
+                outcome_refer_court = `I4g. In 2024, can you estimate the total number of cases that resulted in referral to Village Court:`,
+                outcome_refer_family = `I4h. In 2024, can you estimate the total number of cases that resulted in referral to family:`,
+                outcome_refer_church = `I4i. In 2024, can you estimate the total number of cases that resulted in referral to the church:`,
+                outcome_refer_support = `I4j. In 2024, can you estimate the total number of cases that resulted in referral to health, community or support services:`,
+                outcome_no_action = `I4k. In 2024, can you estimate the total number of cases that resulted in no action:`,
+                outcome_other = `I4l. In 2024, can you estimate the total number of cases that resulted in other outcomes:`,
+                outcome_other_desc = `If other outcomes, please specify:`,
+                defendants_bail = `I5a. In 2024, how many cases in total resulted in placed on bail for defendants?`,
+                defendants_detained = `I5b. In 2024, how many cases in total resulted in detained in a police cell for defendants?`,
+                defendants_imprisoned = `I5c. In 2024, how many cases in total resulted in imprisonment sentence by a court for defendants?`,
+                
+                # Section J: Improvements
+                improve_first = `J1a. If this police station/post had extra funds to spend, in your view what would be the FIRST most important things that would improve your police station/post?`,
+                improve_first_other = `J1a. If this police station/post had extra funds to spend, in your view what would be the FIRST most important things that would improve your police station/post?--OTHER--`,
+                improve_second = `J1b. If this police station/post had extra funds to spend, in your view what would be the SECOND most important things that would improve your police station/post?`,
+                improve_second_other = `J1b. If this police station/post had extra funds to spend, in your view what would be the SECOND most important things that would improve your police station/post?--OTHER--`,
+                improve_third = `J1c. If this police station/post had extra funds to spend, in your view what would be the THIRD most important things that would improve your police station/post?`,
+                improve_third_other = `J1c. If this police station/post had extra funds to spend, in your view what would be the THIRD most important things that would improve your police station/post?--OTHER--`,
+                spend_1000k_desc = `J2. If the police station/post was given 1000kina, how do think the police station/post should spend that money to help and improve the police station/post?`
+            )
 
 # ============================================================================
 # STEP 3: Recode answers
@@ -99,26 +719,7 @@ tibble(
 # STEP 4: Merge 'other' columns
 # ============================================================================
 
-    merge_other_columns <- function(df) {
-        other_cols <- names(df)[grepl("--OTHER--$", names(df))]
-        
-        for (other_col in other_cols) {
-            base_col <- sub("--OTHER--$", "", other_col)
-            
-            if (base_col %in% names(df)) {
-                df[[base_col]] <- ifelse(
-                    !is.na(df[[other_col]]) & df[[other_col]] != "",
-                    paste0(df[[base_col]], ": ", df[[other_col]]),
-                    df[[base_col]]
-                )
-            }
-        }
-        
-        df %>% select(-ends_with("--OTHER--"))
-    }
-
-    justice_magistrate <- justice_magistrate %>%
-        merge_other_columns()
+   
 
 # ============================================================================
 # Save cleaned data

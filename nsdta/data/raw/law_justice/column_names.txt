@@ -1,0 +1,965 @@
+=== MAGISTRATE ===
+Identifier
+Display Name
+Device identifier
+Instance
+Submission Date
+Submitter
+Duration
+Form version
+Questionnaire Code:
+Interviewer:
+Interview Date:
+Province
+District
+Ward:
+Village/Town/Station:
+Corrected village name
+Latitude
+Longitude
+Elevation
+Village Court:
+Nearest police station/post:
+A1. Name of Village Court:
+A2. Gender of respondent:
+A3. Age of respondent:
+A4. Are you the Chairman for this [Village Court?
+A5. If not the Chairman, what is your position?
+A5. If not the Chairman, what is your position?--OTHER--
+A6. If not the Chairman, what is the gender of the Chairman?
+A7. Are you from this District?
+A8. Can you speak the local tok ples in this community?
+A9. How many years have you worked in this Village Court? [write YEAR, including this year]
+A10. Were you elected to the Village Court by the community here?
+A11. If no, please describe how you were appointed:
+B1. How remote is this Village Court?
+B2. Where does the Village Court hold its hearings?
+B2. Where does the Village Court hold its hearings?--OTHER--
+B3. Currently, how many officials are appointed to this Village Court?
+B4. How many of these officials are women?
+B5. How many of these officials regularly attend at this Village Court’s hearings?
+B6. Which level of government is responsible for paying the officials?
+B7. Do all of the officials receive their pay?
+B8. If no, which officials do not receive their pay? [MR]
+B8. If no, which officials do not receive their pay? [MR]--OTHER--
+B9. When was the last time the Court officials attended a training course? [write YEAR]
+B10. Describe the training the Court officials have done since the last national election ie since 2022?
+B11. How often does the Village Court usually hear cases?
+B11. How often does the Village Court usually hear cases?--OTHER--
+B12. Is there a set day that the Village Court sits?
+B13. How many cases are heard in a typical day at this Village Court?
+B14. In 2024, how many times did the Village Court meet?
+B15. In 2024, how many joint sittings did this Village Court have?
+B16. Does this Village Court keep records of the cases?
+B17. In 2024, where did the Court send quarterly returns/records to?
+C1. Does this Village Court have a building?
+C2. If yes, in what state is the building?
+C3. If no, is there land appropriate for a Village Court building?
+C4. Does this Court have its own vehicle?
+C5. In what state are the officials’ uniforms?
+C5. In what state are the officials’ uniforms?--OTHER--
+C6. Does this Court have its own table and chairs?
+C7.  Does this Court get a regular supply of court order forms?
+C8. Does this Court have a regular supply of other stationery eg. Receipt books, quarterly return forms?
+C9. Does the Court have a copy of the Village Court Act and the Regulations?
+C10. Does the Court have a copy of the Village Court manual?
+D1a. How would you get to the health facilities?
+D1b. How long does it take to get there?
+D1c. If days, how many days to get there?
+D1d. If hours, how many hours to get there?
+D1e. If minutes, how many minutes to get there?
+D2a. How would you get to the police station/post?
+D2b. How long does it take to get there?
+D2c. If days, how many days to get there?
+D2d. If hours, how many hours to get there?
+D2e. If minutes, how many minutes to get there?
+D3a. How would you get to the District Court?
+D3b. How long does it take to get there?
+D3c. If days, how many days to get there?
+D3d. If hours, how many hours to get there?
+D3e. If minutes, how many minutes to get there?
+D4a. How would you get to the Primary/community School?
+D4b. How long does it take to get there?
+D4c. If days, how many days to get there?
+D4d. If hours, how many hours to get there?
+D4e. If minutes, how many minutes to get there?
+D5a. How would you get to the Bank?
+D5b. How long does it take to get there?
+D5c. If days, how many days to get there?
+D5d. If hours, how many hours to get there?
+D5e. If minutes, how many minutes to get there?
+INSTRUCTION: Please DO NOT fill in Question D6 and D7
+D6a. How would you get to the Operating road [which can be accessed by 4x4 vehicles]?
+D6b. How long does it take to get there?
+D6c. If days, how many days to get there?
+D6d. If hours, how many hours to get there?
+D6e. If minutes, how many minutes to get there?
+D7a. How would you get to the PMV pickup point?
+D7b. How long does it take to get there?
+D7c. If days, how many days to get there?
+D7d. If hours, how many hours to get there?
+D7e. If minutes, how many minutes to get there?
+D8a. How would you get to the Provincial capital?
+D8b. How long does it take to get there?
+D8c. If days, how many days to get there?
+D8d. If hours, how many hours to get there?
+D8e. If minutes, how many minutes to get there?
+D9a. How would you get to the District capital?
+D9b. How long does it take to get there?
+D9c. If days, how many days to get there?
+D9d. If hours, how many hours to get there?
+D9e. If minutes, how many minutes to get there?
+D10a. How would you get to the Operating air strip?
+D10b. How long does it take to get there?
+D10c. If days, how many days to get there?
+D10d. If hours, how many hours to get there?
+D10e. If minutes, how many minutes to get there?
+D12. Where is the closest place for mobile phone reception?
+E1. Is there a Village Court Inspector for this Village Court?
+E2. If yes, what is the Inspector’s position?
+E2. If yes, what is the Inspector’s position?--OTHER--
+E3. If yes, did the Inspector visit in 2024?
+E3a. If yes, how many times did the Inspector visit in 2024?
+E4. If no visit in 2024, when was the last time the Inspector visited? [YEAR]
+E5. What did the Inspector do during his or her last visit? [MR]
+E5. What did the Inspector do during his or her last visit? [MR]--OTHER--
+E6. What was the main kind of feedback was given at the end of that visit?
+E6. What was the main kind of feedback was given at the end of that visit?--OTHER--
+E7. Did anything change as a result of the visit?
+E8. How often has the Senior Provincial Magistrate visited this Village Court in 2024?
+E8. How often has the Senior Provincial Magistrate visited this Village Court in 2024?--OTHER--
+E9. Has the Senior Provincial Magistrate visited this Village Court in 2024?
+E9a. If visit, how many times has the Senior Provincial Magistrate visited this Village Court in 2024?
+E10. If nil in 2024, when was the last time the Senior Provincial Magistrate visited? [YEAR]
+E11. Does the Senior Provincial Magistrate conduct circuit courts in the province?
+F1. Do people ever have to pay table fees for cases heard by the Village Court?
+F2. What is the set fee for a case at your Village Court? [in Kina]
+F3. Does your Court charge the same fees for all kinds of hearings?
+F4. If no, which cases have higher fees? [MR]
+F4. If no, which cases have higher fees? [MR]--OTHER--
+F5. What is your estimate of the size of the population that this Village Court is responsible for?
+F5. What is your estimate of the size of the population that this Village Court is responsible for? (cleaned)
+F6. What proportion of people, for which this Village Court is responsible for delivering justice services, can afford to pay table fees?
+F7. What proportion of people, for which this Village Court is responsible, do not access the Court because they cannot afford to pay a table fee?
+F8. What happens when a client/complainant wants a matter/case dealt with is unable to pay table fees? [MR]
+F8. What happens when a client/complainant wants a matter/case dealt with is unable to pay table fees? [MR]--OTHER--
+F9. Do you keep records of the table fees you collect?
+F10. What is the total amount of table fees raised at this Village Court in an average month in 2024?
+F10a. If willing to answer, how much the total amount of table fees raised at this Village Court in an average month in 2024? [best guess]
+F11. Where do the fines go that your Court imposes and collects?
+F12. Do you keep or get back any of the fine money?
+F13. Not counting the officials’ pay, has this Village Court apply for any funding in 2024 from the following sources [MR]?
+F13. Not counting the officials’ pay, has this Village Court apply for any funding in 2024 from the following sources [MR]?--OTHER--
+F14. Not counting the officials’ pay, has this Village Court received any funding in 2024 from the following sources [MR]?
+F14. Not counting the officials’ pay, has this Village Court received any funding in 2024 from the following sources [MR]?--OTHER--
+F15. Has this Village Court received funding (or support) from the DDA (or DSIP) since the last national election (2022)?
+F15a. How was this allocation/support received by the Village Court?
+F15b. What was the value of this allocation/support? in Kina [Please write '999' if don't know]
+F15c. Who was responsible for implementing the DDA/DSIP funding?
+F15c. Who was responsible for implementing the DDA/DSIP funding?--OTHER--
+F15d. Has the project(s) for which the DDA/DSIP funding was allocated for been delivered or completed in full and on time?
+F15e. If not completed in full and on time, how many months or years is the implementation of the allocation/support behind schedule, relative to expectations? [Insert number of months and years]
+F15f. If not completed in full and on time, do you think the project(s), which are part of the allocation/support, will ever be completed?
+F15g. If not completed, what percentage of the project(s) of has been completed? [write percent number]
+F15h. If not completed, how useful will the incomplete project(s) be to the Village Court?
+F15i. If not completed, what are the main reasons for the project(s) remaining incomplete? [MR]
+F15i. If not completed, what are the main reasons for the project(s) remaining incomplete? [MR]--OTHER--
+F16. Do you think DDA/DSIP is a fair system for allocating resources?
+F17. Please explain why you think it is fair or unfair:
+F18. Should the Village Court apply for DDA/DSIP funding?
+G1. In 2024, what was the biggest cost in running the Village Court?
+G1. In 2024, what was the biggest cost in running the Village Court?--OTHER--
+G2. In 2024, what would you estimate the total costs of running this Village Court (excluding the Court officials’ pay)? [in Kina]
+G3a. In 2024, how much was spent on maintenance of building (if have one)? [in Kina] - please write '999' if don't know
+G3b. In 2024, how much was spent on uniform? [in Kina] - please write '999' if don't know
+G3c. In 2024, how much was spent on basic equipment eg table chairs? [in Kina] - please write '999' if don't know
+G3d. In 2024, how much was spent on office supplies e.g. receipt books, forms? [in Kina] - please write '999' if don't know
+G3e. In 2024, how much was spent on awareness raising activities? [in Kina] - please write '999' if don't know
+G3f. In 2024, how much was spent on transport / fuel? [in Kina] - please write '999' if don't know
+G3g. In 2024, how much was spent on other expenses? [in Kina] - please write '999' if don't know
+G4a. How does this Village Court normally meet the costs for paying officials who do not receive their allowances: [MR]
+G4a. How does this Village Court normally meet the costs for paying officials who do not receive their allowances: [MR]--OTHER--
+G4b. How does this Village Court normally meet the costs of joint sittings of Village Courts: [MR]
+G4b. How does this Village Court normally meet the costs of joint sittings of Village Courts: [MR]--OTHER--
+G4c. How does this Village Court normally meet the costs of transferring cases to referral District Court: [MR]
+G4c. How does this Village Court normally meet the costs of transferring cases to referral District Court: [MR]--OTHER--
+G4d. How does this Village Court normally meet the costs for fuel for transport : [MR]
+G4d. How does this Village Court normally meet the costs for fuel for transport : [MR]--OTHER--
+G4e. How does this Village Court normally meet the costs of basic maintenance of Village Court : [MR]
+G4e. How does this Village Court normally meet the costs of basic maintenance of Village Court : [MR]--OTHER--
+G4f. How does this Village Court normally meet the costs for Picking up or delivering paperwork/forms: [MR]
+G4f. How does this Village Court normally meet the costs for Picking up or delivering paperwork/forms: [MR]--OTHER--
+G5. Does this Village Court have its own bank account?
+G6. Does this Village Court keep a cashbook or any form of financial records?
+G7. How costly is it for Village Court officials to travel to a bank to get out your allowances?
+G8. Currently, who has primary access to funds and/or table fees received at this Village Court?
+G8. Currently, who has primary access to funds and/or table fees received at this Village Court?--OTHER--
+G9. In 2024, did you usually receive your allowances on time?
+G10. If no, please explain what happened:
+G11. Have you received your pay that you were eligible for in 2024?
+G12. Do you have other sources of income apart from this job?
+G13. If yes, how much of your time is taken up with these other sources of income?
+G14. If yes, please describe other sources of income:
+H1. Currently, is there a Law and Justice Committee  or Peace and Good Order Committee that supports this Village Court?
+H2. If yes, do you know how many times the Law and Justice Committee or Peace and Good Order Committee met in 2024? [please write '999' if don't know]
+H3. What proportion of the community attends Law and Justice Committee  or Peace and Good Order Committee meetings?
+H4. In 2024, did the Senior Provincial Magistrate ever meet with the community to discuss crime, safety and justice issues?
+H5. If yes, what proportion of the community attends?
+H6. In 2024 how much did the local community support the Village Court?
+H7. In 2024, did the Village Court officials assist with awareness raising activities in the community?
+H8. If yes, what the awareness raising activities?
+H9. As part of your work, do you belong to a social media group (eg via FB or Whats App) that deals with law and justice issues?
+H10. If yes, please describe the membership and purpose of the group:
+I1. In 2024, how many cases in total did this Village Court deal with?
+I2a. In 2024, could you estimate how many theft and property damage cases this Village Court dealt with?
+I2b. In 2024, could you estimate how many insults or spreading false reports this Village Court dealt with?
+I2c. In 2024, could you estimate how many clan/tribe conflict and fighting this Village Court dealt with?
+I2d. In 2024, could you estimate how many domestic or family violence this Village Court dealt with?
+I2e. In 2024, could you estimate how many sorcery related offences this Village Court dealt with?
+I2f. In 2024, could you estimate how  many weapon related offences this Village Court dealt with?
+I2g. In 2024, could you estimate how  many home brew related offences this Village Court dealt with?
+I2h. In 2024, could you estimate how many drug cases this Village Court dealt with?
+I2i. In 2024, could you estimate how many sexual violence this Village Court dealt with?
+I2j. In 2024, could you estimate how many homicide cases this Village Court dealt with?
+I3a. In 2024, could you estimate how many family matters e.g. separation, custody cases (that relate to civil matters) this Village Court dealt with?
+I3b. In 2024, could you estimate how many land matters this Village Court dealt with?
+I4a. In 2024, can you estimate how many of the cases resulted in settled by the full court?
+I4b. In 2024, can you estimate how many of the cases resulted in settled by mediation?
+I4c. In 2024, can you estimate how many of the cases resulted in referral to the police?
+I4d. In 2024, can you estimate how many of the cases resulted in referral to the Land Court?
+I4e. In 2024, can you estimate how many of the cases resulted in referral to the District Court?
+I4f. In 2024, can you estimate how many of the cases resulted in referral to the family?
+I4g. In 2024, can you estimate how many of the cases resulted in referral to the church?
+I4h. In 2024, can you estimate how many of the cases resulted in referral to health, community or support services?
+I5a. In 2024, of the cases that were settled by the full court, how many resulted in preventive order?
+I5b. In 2024, of the cases that were settled by the full court, how many resulted in Interim Protection Order (IPO)?
+I5c. In 2024, of the cases that were settled by the full court, how many resulted in community work?
+I5d. In 2024, of the cases that were settled by the full court, how many resulted in fine?
+I5e. In 2024, of the cases that were settled by the full court, how many resulted in imprisonment order?
+I5f. In 2024, of the cases that were settled by the full court, how many resulted in compensation?
+I5g. In 2024, of the cases that were settled by the full court, how many resulted in other orders?
+I5h. If other orders, please explain:
+J1a. If this Village Court had extra funds to spend, in your view what would be THE FIRST most important things that would improve your Court?
+J1a. If this Village Court had extra funds to spend, in your view what would be THE FIRST most important things that would improve your Court?--OTHER--
+J1b. If this Village Court had extra funds to spend, in your view what would be THE SECOND most important things that would improve your Court?
+J1b. If this Village Court had extra funds to spend, in your view what would be THE SECOND most important things that would improve your Court?--OTHER--
+J1c. If this Village Court had extra funds to spend, in your view what would be THE THIRD most important things that would improve your Court?
+J1c. If this Village Court had extra funds to spend, in your view what would be THE THIRD most important things that would improve your Court?--OTHER--
+J2. If the Village Court was given 1000kina, how do think the Village Court should spend that money to help and improve the Village Court?
+Notes for any additional information:
+...249
+
+=== CLERK ===
+Identifier
+Display Name
+Device identifier
+Instance
+Submission Date
+Submitter
+Duration
+Form version
+Questionnaire Code:
+Interviewer:
+Interview Date:
+Province
+District
+Ward:
+Village/Town/Station:
+Corrected village name
+Latitude
+Longitude
+Elevation
+Village Court:
+Nearest police station/post:
+A1. Name of Village Court:
+A2. Gender of respondent:
+A3. Age of respondent:
+A4. Are you the Chairman for this [Village Court?
+A5. If not the Chairman, what is your position?
+A5. If not the Chairman, what is your position?--OTHER--
+A6. If not the Chairman, what is the gender of the Chairman?
+A7. Are you from this District?
+A8. Can you speak the local tok ples in this community?
+A9. How many years have you worked in this Village Court? [write YEAR, including this year]
+A10. Were you elected to the Village Court by the community here?
+A11. If no, please describe how you were appointed:
+B1. How remote is this Village Court?
+B2. Where does the Village Court hold its hearings?
+B2. Where does the Village Court hold its hearings?--OTHER--
+B3. Currently, how many officials are appointed to this Village Court?
+B4. How many of these officials are women?
+B5. How many of these officials regularly attend at this Village Court’s hearings?
+B6. Which level of government is responsible for paying the officials?
+B7. Do all of the officials receive their pay?
+B8. If no, which officials do not receive their pay? [MR]
+B8. If no, which officials do not receive their pay? [MR]--OTHER--
+B9. When was the last time the Court officials attended a training course? [write YEAR]
+B10. Describe the training the Court officials have done since the last national election ie since 2022?
+B11. How often does the Village Court usually hear cases?
+B11. How often does the Village Court usually hear cases?--OTHER--
+B12. Is there a set day that the Village Court sits?
+B13. How many cases are heard in a typical day at this Village Court?
+B14. In 2024, how many times did the Village Court meet?
+B15. In 2024, how many joint sittings did this Village Court have?
+B16. Does this Village Court keep records of the cases?
+B17. In 2024, where did the Court send quarterly returns/records to?
+C1. Does this Village Court have a building?
+C2. If yes, in what state is the building?
+C3. If no, is there land appropriate for a Village Court building?
+C4. Does this Court have its own vehicle?
+C5. In what state are the officials’ uniforms?
+C5. In what state are the officials’ uniforms?--OTHER--
+C6. Does this Court have its own table and chairs?
+C7.  Does this Court get a regular supply of court order forms?
+C8. Does this Court have a regular supply of other stationery eg. Receipt books, quarterly return forms?
+C9. Does the Court have a copy of the Village Court Act and the Regulations?
+C10. Does the Court have a copy of the Village Court manual?
+D1a. How would you get to the health facilities?
+D1b. How long does it take to get there?
+D1c. If days, how many days to get there?
+D1d. If hours, how many hours to get there?
+D1e. If minutes, how many minutes to get there?
+D2a. How would you get to the police station/post?
+D2b. How long does it take to get there?
+D2c. If days, how many days to get there?
+D2d. If hours, how many hours to get there?
+D2e. If minutes, how many minutes to get there?
+D3a. How would you get to the District Court?
+D3b. How long does it take to get there?
+D3c. If days, how many days to get there?
+D3d. If hours, how many hours to get there?
+D3e. If minutes, how many minutes to get there?
+D4a. How would you get to the Primary/community School?
+D4b. How long does it take to get there?
+D4c. If days, how many days to get there?
+D4d. If hours, how many hours to get there?
+D4e. If minutes, how many minutes to get there?
+D5a. How would you get to the Bank?
+D5b. How long does it take to get there?
+D5c. If days, how many days to get there?
+D5d. If hours, how many hours to get there?
+D5e. If minutes, how many minutes to get there?
+INSTRUCTION: Please DO NOT fill in Question D6 and D7
+D6a. How would you get to the Operating road [which can be accessed by 4x4 vehicles]?
+D6b. How long does it take to get there?
+D6c. If days, how many days to get there?
+D6d. If hours, how many hours to get there?
+D6e. If minutes, how many minutes to get there?
+D7a. How would you get to the PMV pickup point?
+D7b. How long does it take to get there?
+D7c. If days, how many days to get there?
+D7d. If hours, how many hours to get there?
+D7e. If minutes, how many minutes to get there?
+D8a. How would you get to the Provincial capital?
+D8b. How long does it take to get there?
+D8c. If days, how many days to get there?
+D8d. If hours, how many hours to get there?
+D8e. If minutes, how many minutes to get there?
+D9a. How would you get to the District capital?
+D9b. How long does it take to get there?
+D9c. If days, how many days to get there?
+D9d. If hours, how many hours to get there?
+D9e. If minutes, how many minutes to get there?
+D10a. How would you get to the Operating air strip?
+D10b. How long does it take to get there?
+D10c. If days, how many days to get there?
+D10d. If hours, how many hours to get there?
+D10e. If minutes, how many minutes to get there?
+D12. Where is the closest place for mobile phone reception?
+E1. Is there a Village Court Inspector for this Village Court?
+E2. If yes, what is the Inspector’s position?
+E2. If yes, what is the Inspector’s position?--OTHER--
+E3. If yes, did the Inspector visit in 2024?
+E3a. If yes, how many times did the Inspector visit in 2024?
+E4. If no visit in 2024, when was the last time the Inspector visited? [YEAR]
+E5. What did the Inspector do during his or her last visit? [MR]
+E5. What did the Inspector do during his or her last visit? [MR]--OTHER--
+E6. What was the main kind of feedback was given at the end of that visit?
+E6. What was the main kind of feedback was given at the end of that visit?--OTHER--
+E7. Did anything change as a result of the visit?
+E8. How often has the Senior Provincial Magistrate visited this Village Court in 2024?
+E8. How often has the Senior Provincial Magistrate visited this Village Court in 2024?--OTHER--
+E9. Has the Senior Provincial Magistrate visited this Village Court in 2024?
+E9a. If visit, how many times has the Senior Provincial Magistrate visited this Village Court in 2024?
+E10. If nil in 2024, when was the last time the Senior Provincial Magistrate visited? [YEAR]
+E11. Does the Senior Provincial Magistrate conduct circuit courts in the province?
+F1. Do people ever have to pay table fees for cases heard by the Village Court?
+F2. What is the set fee for a case at your Village Court? [in Kina]
+F3. Does your Court charge the same fees for all kinds of hearings?
+F4. If no, which cases have higher fees? [MR]
+F4. If no, which cases have higher fees? [MR]--OTHER--
+F5. What is your estimate of the size of the population that this Village Court is responsible for?
+F5. What is your estimate of the size of the population that this Village Court is responsible for? (Cleaned version)
+F6. What proportion of people, for which this Village Court is responsible for delivering justice services, can afford to pay table fees?
+F7. What proportion of people, for which this Village Court is responsible, do not access the Court because they cannot afford to pay a table fee?
+F8. What happens when a client/complainant wants a matter/case dealt with is unable to pay table fees? [MR]
+F8. What happens when a client/complainant wants a matter/case dealt with is unable to pay table fees? [MR]--OTHER--
+F9. Do you keep records of the table fees you collect?
+F10. What is the total amount of table fees raised at this Village Court in an average month in 2024?
+F10a. If willing to answer, how much the total amount of table fees raised at this Village Court in an average month in 2024? [best guess]
+F11. Where do the fines go that your Court imposes and collects?
+F12. Do you keep or get back any of the fine money?
+F13. Not counting the officials’ pay, has this Village Court apply for any funding in 2024 from the following sources [MR]?
+F13. Not counting the officials’ pay, has this Village Court apply for any funding in 2024 from the following sources [MR]?--OTHER--
+F14. Not counting the officials’ pay, has this Village Court received any funding in 2024 from the following sources [MR]?
+F14. Not counting the officials’ pay, has this Village Court received any funding in 2024 from the following sources [MR]?--OTHER--
+F15. Has this Village Court received funding (or support) from the DDA (or DSIP) since the last national election (2022)?
+F15a. How was this allocation/support received by the Village Court?
+F15b. What was the value of this allocation/support? in Kina [Please write '999' if don't know]
+F15c. Who was responsible for implementing the DDA/DSIP funding?
+F15c. Who was responsible for implementing the DDA/DSIP funding?--OTHER--
+F15d. Has the project(s) for which the DDA/DSIP funding was allocated for been delivered or completed in full and on time?
+F15e. If not completed in full and on time, how many months or years is the implementation of the allocation/support behind schedule, relative to expectations? [Insert number of months and years]
+F15f. If not completed in full and on time, do you think the project(s), which are part of the allocation/support, will ever be completed?
+F15g. If not completed, what percentage of the project(s) of has been completed? [write percent number]
+F15h. If not completed, how useful will the incomplete project(s) be to the Village Court?
+F15i. If not completed, what are the main reasons for the project(s) remaining incomplete? [MR]
+F15i. If not completed, what are the main reasons for the project(s) remaining incomplete? [MR]--OTHER--
+F16. Do you think DDA/DSIP is a fair system for allocating resources?
+F17. Please explain why you think it is fair or unfair:
+F18. Should the Village Court apply for DDA/DSIP funding?
+G1. In 2024, what was the biggest cost in running the Village Court?
+G1. In 2024, what was the biggest cost in running the Village Court?--OTHER--
+G2. In 2024, what would you estimate the total costs of running this Village Court (excluding the Court officials’ pay)? [in Kina]
+G3a. In 2024, how much was spent on maintenance of building (if have one)? [in Kina] - please write '999' if don't know
+G3b. In 2024, how much was spent on uniform? [in Kina] - please write '999' if don't know
+G3c. In 2024, how much was spent on basic equipment eg table chairs? [in Kina] - please write '999' if don't know
+G3d. In 2024, how much was spent on office supplies e.g. receipt books, forms? [in Kina] - please write '999' if don't know
+G3e. In 2024, how much was spent on awareness raising activities? [in Kina] - please write '999' if don't know
+G3f. In 2024, how much was spent on transport / fuel? [in Kina] - please write '999' if don't know
+G3g. In 2024, how much was spent on other expenses? [in Kina] - please write '999' if don't know
+G4a. How does this Village Court normally meet the costs for paying officials who do not receive their allowances: [MR]
+G4a. How does this Village Court normally meet the costs for paying officials who do not receive their allowances: [MR]--OTHER--
+G4b. How does this Village Court normally meet the costs of joint sittings of Village Courts: [MR]
+G4b. How does this Village Court normally meet the costs of joint sittings of Village Courts: [MR]--OTHER--
+G4c. How does this Village Court normally meet the costs of transferring cases to referral District Court: [MR]
+G4c. How does this Village Court normally meet the costs of transferring cases to referral District Court: [MR]--OTHER--
+G4d. How does this Village Court normally meet the costs for fuel for transport : [MR]
+G4d. How does this Village Court normally meet the costs for fuel for transport : [MR]--OTHER--
+G4e. How does this Village Court normally meet the costs of basic maintenance of Village Court : [MR]
+G4e. How does this Village Court normally meet the costs of basic maintenance of Village Court : [MR]--OTHER--
+G4f. How does this Village Court normally meet the costs for Picking up or delivering paperwork/forms: [MR]
+G4f. How does this Village Court normally meet the costs for Picking up or delivering paperwork/forms: [MR]--OTHER--
+G5. Does this Village Court have its own bank account?
+G6. Does this Village Court keep a cashbook or any form of financial records?
+G7. How costly is it for Village Court officials to travel to a bank to get out your allowances?
+G8. Currently, who has primary access to funds and/or table fees received at this Village Court?
+G8. Currently, who has primary access to funds and/or table fees received at this Village Court?--OTHER--
+G9. In 2024, did you usually receive your allowances on time?
+G10. If no, please explain what happened:
+G11. Have you received your pay that you were eligible for in 2024?
+G12. Do you have other sources of income apart from this job?
+G13. If yes, how much of your time is taken up with these other sources of income?
+G14. If yes, please describe other sources of income:
+H1. Currently, is there a Law and Justice Committee  or Peace and Good Order Committee that supports this Village Court?
+H2. If yes, do you know how many times the Law and Justice Committee or Peace and Good Order Committee met in 2024? [please write '999' if don't know]
+H3. What proportion of the community attends Law and Justice Committee  or Peace and Good Order Committee meetings?
+H4. In 2024, did the Senior Provincial Magistrate ever meet with the community to discuss crime, safety and justice issues?
+H5. If yes, what proportion of the community attends?
+H6. In 2024 how much did the local community support the Village Court?
+H7. In 2024, did the Village Court officials assist with awareness raising activities in the community?
+H8. If yes, what the awareness raising activities?
+H9. As part of your work, do you belong to a social media group (eg via FB or Whats App) that deals with law and justice issues?
+H10. If yes, please describe the membership and purpose of the group:
+I1. In 2024, how many cases in total did this Village Court deal with?
+I2a. In 2024, could you estimate how many theft and property damage cases this Village Court dealt with?
+I2b. In 2024, could you estimate how many insults or spreading false reports this Village Court dealt with?
+I2c. In 2024, could you estimate how many clan/tribe conflict and fighting this Village Court dealt with?
+I2d. In 2024, could you estimate how many domestic or family violence this Village Court dealt with?
+I2e. In 2024, could you estimate how many sorcery related offences this Village Court dealt with?
+I2f. In 2024, could you estimate how  many weapon related offences this Village Court dealt with?
+I2g. In 2024, could you estimate how  many home brew related offences this Village Court dealt with?
+I2h. In 2024, could you estimate how many drug cases this Village Court dealt with?
+I2i. In 2024, could you estimate how many sexual violence this Village Court dealt with?
+I2j. In 2024, could you estimate how many homicide cases this Village Court dealt with?
+I3a. In 2024, could you estimate how many family matters e.g. separation, custody cases (that relate to civil matters) this Village Court dealt with?
+I3b. In 2024, could you estimate how many land matters this Village Court dealt with?
+I4a. In 2024, can you estimate how many of the cases resulted in settled by the full court?
+I4b. In 2024, can you estimate how many of the cases resulted in settled by mediation?
+I4c. In 2024, can you estimate how many of the cases resulted in referral to the police?
+I4d. In 2024, can you estimate how many of the cases resulted in referral to the Land Court?
+I4e. In 2024, can you estimate how many of the cases resulted in referral to the District Court?
+I4f. In 2024, can you estimate how many of the cases resulted in referral to the family?
+I4g. In 2024, can you estimate how many of the cases resulted in referral to the church?
+I4h. In 2024, can you estimate how many of the cases resulted in referral to health, community or support services?
+I5a. In 2024, of the cases that were settled by the full court, how many resulted in preventive order?
+I5b. In 2024, of the cases that were settled by the full court, how many resulted in Interim Protection Order (IPO)?
+I5c. In 2024, of the cases that were settled by the full court, how many resulted in community work?
+I5d. In 2024, of the cases that were settled by the full court, how many resulted in fine?
+I5e. In 2024, of the cases that were settled by the full court, how many resulted in imprisonment order?
+I5f. In 2024, of the cases that were settled by the full court, how many resulted in compensation?
+I5g. In 2024, of the cases that were settled by the full court, how many resulted in other orders?
+I5h. If other orders, please explain:
+J1a. If this Village Court had extra funds to spend, in your view what would be THE FIRST most important things that would improve your Court?
+J1a. If this Village Court had extra funds to spend, in your view what would be THE FIRST most important things that would improve your Court?--OTHER--
+J1b. If this Village Court had extra funds to spend, in your view what would be THE SECOND most important things that would improve your Court?
+J1b. If this Village Court had extra funds to spend, in your view what would be THE SECOND most important things that would improve your Court?--OTHER--
+J1c. If this Village Court had extra funds to spend, in your view what would be THE THIRD most important things that would improve your Court?
+J1c. If this Village Court had extra funds to spend, in your view what would be THE THIRD most important things that would improve your Court?--OTHER--
+J2. If the Village Court was given 1000kina, how do think the Village Court should spend that money to help and improve the Village Court?
+Notes for any additional information:
+...249
+
+=== COMMUNITY ===
+Identifier
+Display Name
+Device identifier
+Instance
+Submission Date
+Submitter
+Duration
+Form version
+Questionnaire Code:
+Interviewer:
+Interview Date:
+Province
+District
+Ward:
+Village/Town/Station:
+Corrected village name
+Latitude
+Longitude
+Elevation
+Village Court:
+Nearest police station or post (pick one):
+A1. Gender of respondent:
+A2. Age of respondent:
+A3. Do you identify as a person with a disability?
+A4. If yes, please describe:
+A5. Role or position in this community:
+A5. Role or position in this community:--OTHER--
+A6. Highest educational qualification:
+A7. Are you from this District?
+A8. How remote do you think the local justice services are? (compared to the rest of the country)
+A9. Can you speak the local tok ples in this community?
+A10. When did you last attend the Village Court?
+A11. When did you last contact the nearest police station/post?
+A12. Did the community leaders here contact the nearest police station/post in the past year?
+A13. Do you have any personal ties or connections with this Village Court officials?
+A13a. If yes, please describe ties or connections:
+A14. Do you have any ties or connections with the nearest police station/post?
+A14a. If yes, please describe ties or connections:
+B1. How often does the Village Court usually hear cases?
+B1. How often does the Village Court usually hear cases?--OTHER--
+B2. Is there a set day that the Village Court sits?
+B3. Does the nearest police station or post have regular hours?
+B4. Can you contact the police 24/7?
+B5. How many hours a day is the station/post usually open during the week? [write number of hours in a day]
+B6. How long does it take you to get to the nearest police station or post?
+B6. How long does it take you to get to the nearest police station or post?--OTHER--
+B7. How busy is the Village Court?
+B7. How busy is the Village Court?--OTHER--
+B8. How busy is the nearest police station/post ?
+B8. How busy is the nearest police station/post ?--OTHER--
+B9. How many Village Court officials regularly hear cases in your Village court?
+H10. How many police regularly work at the nearest police station/post?
+B11. In what state is your Village Court? (building or designated area)
+B12. In what state is the nearest police station/post?
+B13. In what state are the houses or barracks provided by the RPNGC?
+C1. How much do people pay on average for a Village Court hearing as a table fee? in Kina [please write '999' if don't know]
+C2. Does your Village Court charge the same fees for all kinds of hearings?
+C3. If no, which cases have higher fees?
+C4. How much do you have to pay for the fuel money on average for the nearest police station or post to respond? - in Kina [please write '999' if don't know]
+C5. What do think about the current table fees charged by your Village Court?
+C6. What do you think about the current amounts asked by the nearest police station/post to help pay for fuel and other things?
+C7. How is the recurrent operational costs (not allowances) of the Village Court being met at present? [MR]
+C8. How is the recurrent operational costs (not salaries) of the police being met at present? [MR]
+C9. Have politicians (eg. Governor, open MP, LLG president, Ward councillor) helped your Village Court since the last election?
+C10. If yes, what were the funds used for? [MR]
+C10. If yes, what were the funds used for? [MR]--OTHER--
+C11. Have politicians (eg. Governor, open MP, LLG president, Ward councillor) helped the nearest police station/post since the last election?
+C12. If yes, what were the funds used for? [MR]
+C12. If yes, what were the funds used for? [MR]--OTHER--
+C13. What would help improve the Village Court? [Choose 3] [MR]
+C13. What would help improve the Village Court? [Choose 3] [MR]--OTHER--
+C14. What would help improve the nearest police station or post? [Choose 3] [MR]
+C14. What would help improve the nearest police station or post? [Choose 3] [MR]--OTHER--
+C15. Who should provide funds to the Village Court? [Choose 2] [MR]
+C15. Who should provide funds to the Village Court? [Choose 2] [MR]--OTHER--
+C15a. Please explain your picks for the Village Court:
+C16. Who should provide funds to the nearest police station/post? [Choose 2] [MR]
+C16. Who should provide funds to the nearest police station/post? [Choose 2] [MR]--OTHER--
+C16a. Please explain your picks for the police station/post:
+D1. How would you and your family rate your Village Court in handling disputes?
+D2. What kind of cases does your Village Court deal with well? [MR] [Include all that are mentioned]
+D2. What kind of cases does your Village Court deal with well? [MR] [Include all that are mentioned]--OTHER--
+D3. How much of the community here respects your Court’s decisions?
+D4. Are you and your family happy with the Village Court?
+D5. What do you think are the biggest problems with the Village Court? [Choose 3] [MR]
+D5. What do you think are the biggest problems with the Village Court? [Choose 3] [MR]--OTHER--
+D6. How would you and your family rate the nearest police station/post in handling disputes?
+D7. Which kind of cases does the the nearest police station/post deal with well? [MR] [Include all that are mentioned]
+D7. Which kind of cases does the the nearest police station/post deal with well? [MR] [Include all that are mentioned]--OTHER--
+D8. How much of the community here respects the police at the nearest station/post?
+D9. Are you and your family happy with the nearest police station/post?
+D10. What do you think are the biggest problems with the nearest police station/post? [List the 3 mentioned] [MR]
+D10. What do you think are the biggest problems with the nearest police station/post? [List the 3 mentioned] [MR]--OTHER--
+D11. What are the biggest law and order problems faced by the local community?
+D12. How safe do you feel walking alone at night in your local community?
+D13. Since the last national election, do you believe that local people’s feelings of safety has got better or worse?
+D14. If you or your family have been wronged (little wrong), who would you go to for help? [MR]
+D14. If you or your family have been wronged (little wrong), who would you go to for help? [MR]--OTHER--
+D15. If you or your family have been wronged (big wrong), who would you go to for help? [MR]
+D15. If you or your family have been wronged (big wrong), who would you go to for help? [MR]--OTHER--
+E1. Currently, is there a Law and Justice Committee or Peace and Good Order Committee that supports this Village Court and the nearest police station/post?
+E2. If yes, do you know when the Law and Justice Committee or Peace and Good Order Committee last met? write YEAR [please write '999' if don't know]
+E3. If yes, what proportion of the community attends Law and Justice Committee or Peace and Good Order Committee meetings?
+E4. Do the Village Court officials ever call a community meeting?
+E5. Do the police at the nearest station/post ever call a community meeting?
+E6. In 2024 how much did the local community support this Village Court?
+E7. In 2024 how much did the local community support the nearest police station/post?
+Please add notes, if any:
+...109
+
+=== POLICE ===
+Identifier
+Display Name
+Device identifier
+Instance
+Submission Date
+Submitter
+Duration
+Form version
+Questionnaire Code:
+Interviewer:
+Interview Date:
+Province
+District
+Ward:
+Latitude
+Longitude
+Elevation
+Village Court:
+Corrected village name
+Police Station / Post:
+A1. Name of police station/post:
+A2. Gender of respondent:
+A3. Age of respondent (record the mid-point if they give a range):
+A4. Are you the Office in Charge for this station/post?
+A5. If no, what is your position?
+A5. If no, what is your position?--OTHER--
+A6. What is the gender of the OIC?
+A7. Are you from this District?
+A8. Can you speak the local tok ples in this community?
+A9. How many years have you worked in this police station/post?
+A10. How were you assigned to the Station/post?
+A10. How were you assigned to the Station/post?--OTHER--
+A11. Do you want to remain at the station/post next year?
+A12. Currently, what is your official police grade?
+A13. Are you being paid at that grade?
+B1. How remote is this police station/post?
+B2. Type of police facility:
+B2. Type of police facility:--OTHER--
+B3. What buildings or facilities does this police station/post have? [MR]
+B3. What buildings or facilities does this police station/post have? [MR]--OTHER--
+B4a. Currently, how many police officers work at this police station/post?
+B4b. Currently, how many police reservists work at this police station/post?
+B4c. Currently, how many police auxiliaries work at this police station/post?
+B4d. Currently, how many office staff (civilians) work at this police station/post?
+B4d. Currently, how many other personnel work at this police station/post?
+B5. How many of these police officers are women?
+B6. How many of the police regularly turn up for work at this station/post?
+B7. In the past month, how many police at the station/post were away for more than two consecutive working days?
+B8. What are the three main reasons that staff are away at this police station/post? [MR] - choose 3 main reasons
+B8. What are the three main reasons that staff are away at this police station/post? [MR] - choose 3 main reasons--OTHER--
+B9. In 2024, have the police staff at your station/post usually received their pay on time?
+B10. Have the police staff been paid the other duty allowances that they were eligible for in 2024?
+B11. Do the police officers here have other sources of income apart from this job?
+B12. If yes, how much of their time is taken up with these other sources of income?
+B13. If yes, please describe these sources of income:
+B14. When was the last time any of the police officers attended a training course? YEAR
+B15. Please describe any training that the police officers here have attended since the last national election (since 2022):
+B16. How many days a week is this Station/post usually open? [write number of days]
+B17. How many hours a day does the Station/post usually open? [write number of hours]
+B18. How many people/the general public are seen in a typical day at this station/post in total?
+B19. How many phone calls, in total, does this station/post receive in a typical day?
+B20. How safe do police staff at this police station/post feel when doing their duties?
+B21. Do you think this station/post’s staff are safer or less safe compared to three years ago (since the last national election)?
+B22. Does this station/post keep an up to date Occurrence Book?
+B23. Does this station/post keep any other records of its cases?
+B24. If yes, please describe the record keeping:
+B25. In 2024, did you send records/statistics to one of more of the following centres. [MR]
+INSTRUCTION: Ask the Officer-In-Charge if (s)he would mind taking a tour of the police station/post to observe the infrastructure as you are completing the next sections. Be flexible and listen to the preference of the OIC as they might prefer to do this after the interview or not at all…
+READ ALOUD: I would like to ask you a series of questions about the state of infrastructure at the station, including police housing. To start…
+C1. What are the total number of buildings at this station/post?
+C2a1. How many station building are there at this station/post?
+C2a2. How many station building are in such a bad state that they need to be completely rebuilt?
+C2a3. How many station building are in such a bad state that they need  major maintenance?
+C2a4. How many station building are in such a state that they need some maintenance?
+C2a5. How many station building are in a suitable condition?
+C2b1. How many lock up or cells are there at this station/post?
+C2b2. How many lock up or cells are in such a bad state that they need to be completely rebuilt?
+C2b3. How many lock up or cells are in such a bad state that they need  major maintenance?
+C2b4. How many lock up or cells are in such a state that they need some maintenance?
+C2b5. How many lock up or cells are in a suitable condition?
+C2c1. How many compound for vehicles etc are there at this station/post?
+C2c2. How many compound for vehicles etc are in such a bad state that they need to be completely rebuilt?
+C2c3. How many compound for vehicles etc are in such a bad state that they need  major maintenance?
+C2c4. How many compound for vehicles etc are in such a state that they need some maintenance?
+C2c5. How many compound for vehicles etc are in a suitable condition?
+C3. What are the total number of police houses/units (provided by the RPNGC) at this station/post?
+C4a1. How many police houses are there at this station/post?
+C4a2. How many police houses are in such a bad state that they need to be completely rebuilt?
+C4a3. How many police houses are in such a bad state that they need  major maintenance?
+C4a4. How many police houses are in such a state that they need some maintenance?
+C4a5. How many police houses are in a suitable condition?
+C4b1. How many police units (eg barracks) are there at this station/post?
+C4b2. How many police units (eg barracks) are in such a bad state that they need to be completely rebuilt?
+C4b3. How many police units (eg barracks) are in such a bad state that they need  major maintenance?
+C4b4. How many police units (eg barracks) are in such a state that they need some maintenance?
+C4b5. How many police units (eg barracks) are in a suitable condition?
+C4c1. How many police living in their own accommodation (e.g. self-owned, rental, family) are there at this station/post?
+C4c2. How many police living in their own accommodation (e.g. self-owned, rental, family) are in such a bad state that they need to be completely rebuilt?
+C4c3. How many police living in their own accommodation (e.g. self-owned, rental, family) are in such a bad state that they need  major maintenance?
+C4c4. How many police living in their own accommodation (e.g. self-owned, rental, family) are in such a state that they need some maintenance?
+C4c5. How many police living in their own accommodation (e.g. self-owned, rental, family) are in a suitable condition?
+C5. Does this police station/post have electricity?
+C6. If yes, how is the power supplied? [tick all that apply]
+C6. If yes, how is the power supplied? [tick all that apply]--OTHER--
+C7. How many times was this station/post attacked or broken into in 2024?
+C8. What is the main source of drinking water for the police station/post?
+C8. What is the main source of drinking water for the police station/post?--OTHER--
+C9. Is water available from that source today?
+C10. If yes, has that water been available from this source for all this year?
+C11. What is the main type of toilet facilities?
+C12. If flush toilets, are they working today?
+C13. Are there enough toilets for detainees in the police cells?
+C14. If no, how many more are needed?
+READ ALOUD: I would now like to ask you about the availability of important assets for this police station/post, if you could state whether you have ‘good’, ‘adequate’, ‘poor’ or ‘no’ availability (provision) of the following:
+C15a. What is the availability of vehicle/s at this station/post?
+C15b. What is the availability of uniforms at this station/post?
+C15c. What is the availability of tables at this station/post?
+C15d. What is the availability of chairs at this station/post?
+C15e. What is the availability of record books (eg Occurrence Book) and forms at this station/post?
+C15f. What is the availability of stationary at this station/post?
+C15g. What is the availability of computers and printers at this station/post?
+C15h. What is the availability of firearms at this station/post?
+C15i. What is the availability of handcuffs at this station/post?
+C15j. What is the availability of vests at this station/post?
+C15k. What is the availability of mobile phone network access at this station/post?
+C15l. What is the availability of internet connectivity at this station/post?
+C15m. What is the availability of radios at this station/post?
+NOTES TO EXPLAIN CONTEXT FOR SECTION C (If required)
+D1a1. How would you get to the health facilities?
+D1a2. How long does it take to get there?
+D1a3. If days, how many days in total?
+D1a4. If hours, how many hours in total?
+D1a5. If minutes, how many minutes in total?
+D1b1. How would you get to the safe house?
+D1b2. How long does it take to get there?
+D1b3. If days, how many days in total?
+D1b4. If hours, how many hours in total?
+D1b5. If minutes, how many minutes in total?
+D1c1. How would you get to the Village Court?
+D1c2. How long does it take to get there?
+D1c3. If days, how many days in total?
+D1c4. If hours, how many hours in total?
+D1c5. If minutes, how many minutes in total?
+D1d1. How would you get to the District Court?
+D1d2. How long does it take to get there?
+D1d3. If days, how many days in total?
+D1d4. If hours, how many hours in total?
+D1d5. If minutes, how many minutes in total?
+D1e1. How would you get to the Primary/Community School?
+D1e2. How long does it take to get there?
+D1e3. If days, how many days in total?
+D1e4. If hours, how many hours in total?
+D1e5. If minutes, how many minutes in total?
+D1f1. How would you get to the Bank?
+D1f2. How long does it take to get there?
+D1f3. If days, how many days in total?
+D1f4. If hours, how many hours in total?
+D1f5. If minutes, how many minutes in total?
+D1g1. How would you get to the Provincial Capital?
+D1g2. How long does it take to get there?
+D1g3. If days, how many days in total?
+D1g4. If hours, how many hours in total?
+D1g5. If minutes, how many minutes in total?
+D1h1. How would you get to the District Capital?
+D1h2. How long does it take to get there?
+D1h3. If days, how many days in total?
+D1h4. If hours, how many hours in total?
+D1h5. If minutes, how many minutes in total?
+D1i1. How would you get to the operating air strip?
+D1i2. How long does it take to get there?
+D1i3. If days, how many days in total?
+D1i4. If hours, how many hours in total?
+D1i5. If minutes, how many minutes in total?
+D2. Where is the closest place for mobile phone reception?
+E1. Is there an Inspector for this police station/post?
+E2. If yes, what is the Inspector’s position?
+E2. If yes, what is the Inspector’s position?--OTHER--
+E3. How often did the Inspector visit in 2024?
+E3a. If visit, how many times did the supervisor visit in 2024?
+E4. If nil in 2024, in which year was the last time the Inspector visited?
+E5. What did the Inspector do during his or her last visit? [MR]
+E5. What did the Inspector do during his or her last visit? [MR]--OTHER--
+E6. What was the main kind of feedback was given at the end of that visit?
+E6. What was the main kind of feedback was given at the end of that visit?--OTHER--
+E7. Did anything change as a result of the visit?
+E8. How often has the Provincial Commander visited this police station/post?
+E8. How often has the Provincial Commander visited this police station/post?--OTHER--
+E9. Has the Provincial Commander visited this station/post in 2024?
+E9a. If visits, how many times has the Provincial Commander visited this station/post in 2024?
+E10. If nil, when was the last time a Provincial Commander visited this station/post? [Month  /  Year]
+F1. Does this police station/post have an annual operating budget?
+F2. If yes, where is the budget submitted? [MR]
+F2. If yes, where is the budget submitted? [MR]--OTHER--
+F3. In 2024, how much did you ask for in total in your budget? (estimate in Kina) [please write '999' if don't know]
+F4. In 2024, how much of the budget funds were actually provided? in Kina [please write '999' if don't know]
+F5a. Does this station/post need help from people/clients to pay for call outs, fuel costs?
+F5b. Does this station/post need help from people/clients to pay for patrols, fuel costs?
+F5c. Does this station/post need help from people/clients to pay for vehicle/s or vehicle repairs?
+F5d. Does this station/post need help from people/clients to pay for lodging a complaint?
+F5e. Does this station/post need help from people/clients to pay for transporting a victim to health or support services?
+F5f. Does this station/post need help from people/clients to pay for transporting a defendant to prison or District Court?
+F5g. Does this station/post need help from people/clients to pay for escort?
+F5h. Does this station/post need help from people/clients to pay for security at events?
+F5i. Does this station/post need help from people/clients to pay for other cost?
+Please specify the other cost:
+F6. Do you keep records of the money/fees you collect?
+F7. What is the total amount of money/fees raised at this Station/post in an average month in 2024? [if memory then best guess]
+F8. What is your estimate of the size of the population that this Station/post is responsible for? [Estimate; record mid-point if give a range]
+F9. What proportion of people, for which this Station/post is responsible for delivering justice services, can afford to pay fees/help with costs?
+F10. What proportion of people, for which this Station/post is responsible, do not access the police  because they cannot afford to pay a fee or help with costs?
+F11. What happens when a client/complainant wants a matter/case dealt with is unable to pay fees or cannot help with costs? [MR]
+F11. What happens when a client/complainant wants a matter/case dealt with is unable to pay fees or cannot help with costs? [MR]--OTHER--
+F12. Who gets exempted from paying fees or helping with costs?
+F12. Who gets exempted from paying fees or helping with costs?--OTHER--
+READ ALOUD: Now I would like to ask you about how much financial support, including in-kind support, did you receive in 2024 from the following sources. To start...
+F13a. How much financial support, including in-kind support, did you receive in 2024 from the National Government development funds for a project? - in Kina
+F13b. How much financial support, including in-kind support, did you receive in 2024 from the Provincial Government – Development Grants? - in Kina
+F13c. How much financial support, including in-kind support, did you receive in 2024 from the District Services Improvement Program Funding - DSIP / Open MP District Funding? - in Kina
+F13d. How much financial support, including in-kind support, did you receive in 2024 from the Local Level Government or Ward? - in Kina
+F13e. How much financial support, including in-kind support, did you receive in 2024 from the Church organisations – donation or grant? - in Kina
+F13f. How much financial support, including in-kind support, did you receive in 2024 from the Non-Government Organisations (NGOs)? - in Kina
+F13g. How much financial support, including in-kind support, did you receive in 2024 from the Local politicians (Such as LLG President or Ward Counsellor)? - in Kina
+F13h. How much financial support, including in-kind support, did you receive in 2024 from the Donor aid agencies (Such as DFAT- PNG-APP, APLJP; EU)? - in Kina
+F13i. How much financial support, including in-kind support, did you receive in 2024 from the Private institutions and companies such as resource companies? - in Kina
+F13j. How much financial support, including in-kind support, did you receive in 2024 from Fundraising activities? - in Kina
+F13k. How much financial support, including in-kind support, did you receive in 2024 from Community support? - in Kina
+F13j. How much financial support, including in-kind support, did you receive in 2024 from other sources? - in Kina
+F14. Does this police station/post keep records of the bail money it collects?
+F15. Where does the bail money go?
+READ ALOUD: I would like to ask you about funding from the District Development Authority (DDA) or the District Services Improvement Program (DSIP):
+F16. Has this police station/post received funding (or support) from the DDA (or DSIP) since the last national election (2022)?
+F16a. Please describe the support received:
+F16b. How was this allocation/support received by this station/post?
+F16b. How was this allocation/support received by this station/post?--OTHER--
+F16c. What was the value of this allocation/support? - in Kina [please write '999' if don't know]
+F16d. Who was responsible for implementing the project(s)? [MR]
+F16d. Who was responsible for implementing the project(s)? [MR]--OTHER--
+F16e. Was the project listed in your annual budget plan?
+F16f. Has the DDA/DSIP project been delivered or completed in full and on time?
+F16g. If not completed in full and on time, how many months is project implementation behind schedule, relative to expectations? [insert number of month]
+F16h. If not completed in full and on time, do you think the project(s), which are part of the allocation/support, will ever be completed?
+F16i. If not completed, what percentage of the project(s) has been completed? [write percentage]
+F16j. If not completed, how useful will the incomplete project(s) be to the police station/post?
+F16k. If not completed, what are the main reasons for the project(s) remaining incomplete? [MR]
+F16k. If not completed, what are the main reasons for the project(s) remaining incomplete? [MR]--OTHER--
+F17. Do you think DDA/DSIP is a fair system for allocating resources?
+F18. Please explain why you think it is fair or unfair
+F19. Should your police station/post apply for DDA/DSIP funding?
+F20. Does often does this police station/post have to ask business houses to provide cash or supplies on credit?
+F21. If yes, how much interest does the business houses charge? (on average, an estimate) - write percentage
+NOTES TO EXPLAIN CONTEXT FOR SECTION F (If required)
+G1. In 2024, what was the biggest cost in running this police station/post?
+G1. In 2024, what was the biggest cost in running this police station/post?--OTHER--
+G2. In 2024, what would you estimate the total costs of running this station/post (excluding staff salaries and allowances)? - in Kina
+G3a. In 2024, how much was spent on the maintenance of building/s (if have one)? -in Kina
+G3b. In 2024, how much was spent on uniforms? -in Kina
+G3c. In 2024, how much was spent on basic equipment eg computers, table and chairs? -in Kina
+G3d. In 2024, how much was spent on office supplies eg receipt books, forms? -in Kina
+G3e. In 2024, how much was spent on firearms? -in Kina
+G3f. In 2024, how much was spent on extra staff? -in Kina
+G3g. In 2024, how much was spent on transport/fuel? -in Kina
+G3g. In 2024, how much was spent on other items? -in Kina
+Please specify the other items:
+G4a. How does this police station/post normally meet the costs of funding responses to call outs: [MR]
+G4a. How does this police station/post normally meet the costs of funding responses to call outs: [MR]--OTHER--
+G4b. How does this police station/post normally meet the costs of transporting defendants, victims or witnesses: [MR]
+G4b. How does this police station/post normally meet the costs of transporting defendants, victims or witnesses: [MR]--OTHER--
+G4c. How does this police station/post normally meet the costs of transferring cases to District Court: [MR]
+G4c. How does this police station/post normally meet the costs of transferring cases to District Court: [MR]--OTHER--
+G4d. How does this police station/post normally meet the costs of fuel for transport or generator: [MR]
+G4d. How does this police station/post normally meet the costs of fuel for transport or generator: [MR]--OTHER--
+G4e. How does this police station/post normally meet the costs of paying for or maintain public utilities – costs of power, water: [MR]
+G4e. How does this police station/post normally meet the costs of paying for or maintain public utilities – costs of power, water: [MR]--OTHER--
+G4f. How does this police station/post normally meet the costs of basic maintenance of building/s : [MR]
+G4f. How does this police station/post normally meet the costs of basic maintenance of building/s : [MR]--OTHER--
+G4g. How does this police station/post normally meet the costs of repairs and maintenance of vehicle/s: [MR]
+G4g. How does this police station/post normally meet the costs of repairs and maintenance of vehicle/s: [MR]--OTHER--
+G4h. How does this police station/post normally meet the costs of telephone calls: [MR]
+G4h. How does this police station/post normally meet the costs of telephone calls: [MR]--OTHER--
+G4i. How does this police station/post normally meet the costs of escorts: [MR]
+G4i. How does this police station/post normally meet the costs of escorts: [MR]--OTHER--
+G4j. How does this police station/post normally meet the costs of security at events: [MR]
+G4j. How does this police station/post normally meet the costs of security at events: [MR]--OTHER--
+G4k. How does this police station/post normally meet the costs of patrols: [MR]
+G4k. How does this police station/post normally meet the costs of patrols: [MR]--OTHER--
+G4l. How does this police station/post normally meet the costs of awareness raising activities: [MR]
+G4l. How does this police station/post normally meet the costs of awareness raising activities: [MR]--OTHER--
+G4m. How does this police station/post normally meet the costs of other activities: [MR]
+G4m. How does this police station/post normally meet the costs of other activities: [MR]--OTHER--
+G5. Does this police station/post have its own bank account?
+G6. Does this police station/post keep a cashbook or any form of financial records?
+G7. How costly is it for this station/post’s staff to travel to a bank to get out your allowances?
+G8. Currently, who has primary access to funds and/or fees received at this police station/post?
+NOTES TO EXPLAIN CONTEXT FOR SECTION G (If required)
+H1. Currently, is there a Law and Justice Committee or Peace and Good Order Committee that supports this police station/post?
+H2. If yes, do you know when the Law and Justice Committee or Peace and Good Order Committee last met? write YEAR
+H3. If yes, what proportion of the community attends Law and Justice Committee or Peace and Good Order Committee meetings?
+H4. In 2024, did the Provincial Commander ever meet with the community to discuss crime, safety and justice issues?
+H5. If yes, what proportion of the community attends?
+H6. In 2024 how much did the local community support this police station/post?
+H7. In 2024, did this police station/post undertake or assist with awareness raising activities in the community?
+H8. If yes, what were they?
+H9. As part of your work, do you belong to a social media group (eg via FB or Whats App) that deals with law and justice issues?
+H10. If yes, please describe the membership and purpose of the group:
+I1. In 2024, how many cases in total did this police station/post deal with?
+I2a. In 2024, could you estimate how many abduction case this police station/post dealt with:
+I2b. In 2024, could you estimate how many arson case this police station/post dealt with:
+I2c. In 2024, could you estimate how many stealing case this police station/post dealt with:
+I2d. In 2024, could you estimate how many property damage case this police station/post dealt with:
+I2e. In 2024, could you estimate how many alcohol case this police station/post dealt with:
+I2f. In 2024, could you estimate how many drug offences case this police station/post dealt with:
+I2g. In 2024, could you estimate how many cyber offences (online offences) case this police station/post dealt with:
+I2h. In 2024, could you estimate how many child abuse case this police station/post dealt with:
+I2i. In 2024, could you estimate how many traffic offences case this police station/post dealt with:
+I2j. In 2024, could you estimate how many firearm offences case this police station/post dealt with:
+I2k. In 2024, could you estimate how many domestic violence case this police station/post dealt with:
+I2l. In 2024, could you estimate how many public order case this police station/post dealt with:
+I2m. In 2024, could you estimate how many violent offences/assault case this police station/post dealt with:
+I2n. In 2024, could you estimate how many armed robbery case this police station/post dealt with:
+I2o. In 2024, could you estimate how many sexual offences case this police station/post dealt with:
+I2p. In 2024, could you estimate how many homicide case this police station/post dealt with:
+I2p. In 2024, could you estimate how many other case this police station/post dealt with:
+I2q. If other case, please specify:
+I3a. In 2024, could you estimate how many of the family matters e.g. separation, custody this police station/post dealt with:
+I3b. In 2024, could you estimate how many of the land matters this police station/post dealt with:
+I4a. In 2024, can you estimate the total number of cases that resulted in issued a warning:
+I4b. In 2024, can you estimate the total number of cases that resulted in settled by mediation:
+I4c. In 2024, can you estimate the total number of cases that resulted in summons issued by the police:
+I4d. In 2024, can you estimate the total number of cases that resulted in arrest by the police:
+I4e. In 2024, can you estimate the total number of cases that resulted in prosecution by the police:
+I4f. In 2024, can you estimate the total number of cases that resulted in referral to public prosecutions:
+I4g. In 2024, can you estimate the total number of cases that resulted in referral to Village Court:
+I4h. In 2024, can you estimate the total number of cases that resulted in referral to family:
+I4i. In 2024, can you estimate the total number of cases that resulted in referral to the church:
+I4j. In 2024, can you estimate the total number of cases that resulted in referral to health, community or support services:
+I4k. In 2024, can you estimate the total number of cases that resulted in no action:
+I4l. In 2024, can you estimate the total number of cases that resulted in other outcomes:
+If other outcomes, please specify:
+I5a. In 2024, how many cases in total resulted in placed on bail for defendants?
+I5b. In 2024, how many cases in total resulted in detained in a police cell for defendants?
+I5c. In 2024, how many cases in total resulted in imprisonment sentence by a court for defendants?
+NOTES TO EXPLAIN CONTEXT FOR SECTION I (If required)
+J1a. If this police station/post had extra funds to spend, in your view what would be the FIRST most important things that would improve your police station/post?
+J1a. If this police station/post had extra funds to spend, in your view what would be the FIRST most important things that would improve your police station/post?--OTHER--
+J1b. If this police station/post had extra funds to spend, in your view what would be the SECOND most important things that would improve your police station/post?
+J1b. If this police station/post had extra funds to spend, in your view what would be the SECOND most important things that would improve your police station/post?--OTHER--
+J1c. If this police station/post had extra funds to spend, in your view what would be the THIRD most important things that would improve your police station/post?
+J1c. If this police station/post had extra funds to spend, in your view what would be the THIRD most important things that would improve your police station/post?--OTHER--
+J2. If the police station/post was given 1000kina, how do think the police station/post should spend that money to help and improve the police station/post?
+Notes for any additional information:
+...351

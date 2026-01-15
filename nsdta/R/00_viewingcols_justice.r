@@ -37,5 +37,3 @@ tibble(
     community = c(names(justice_community_raw), rep(NA, max_cols - ncol(justice_community_raw))),
     police = c(names(justice_police_raw), rep(NA, max_cols - ncol(justice_police_raw)))
 ) %>% View()
-
-# Checking after Step 1 cleaning is finished
