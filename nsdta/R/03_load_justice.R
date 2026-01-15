@@ -62,6 +62,10 @@
     justice_police <- justice_police_raw %>%
         select(-all_of(c(common_remove, police_remove)))
 
+       tibble(
+    magistrate = c(names(justice_magistrate), rep(NA, max_cols - ncol(justice_magistrate)))
+    ) %>% View()
+
 
 # ============================================================================
 # STEP 2: Rename variables to be simpler
