@@ -26,13 +26,6 @@
     justice_community_raw <- read_excel(justice_file, sheet = 3, skip = 1, col_types = "text")
     justice_police_raw <- read_excel(justice_file, sheet = 4, skip = 1, col_types = "text")
 
-# check no. of cols
-tibble(
-    dataset = c("magistrate", "clerk", "community", "police"),
-    n_cols = c(ncol(justice_magistrate_raw), ncol(justice_clerk_raw), 
-               ncol(justice_community_raw), ncol(justice_police_raw))
-)
-
 # ============================================================================
 # STEP 1: Remove unhelpful columns
 # ============================================================================
@@ -69,12 +62,8 @@ tibble(
     justice_police <- justice_police_raw %>%
         select(-all_of(c(common_remove, police_remove)))
 
-# Check no. of cols after removal
-tibble(
-    dataset = c("magistrate", "clerk", "community", "police"),
-    n_cols = c(ncol(justice_magistrate), ncol(justice_clerk), 
-               ncol(justice_community), ncol(justice_police))
-)
+    
+
 
 # ============================================================================
 # STEP 2: Rename variables to be simpler
@@ -160,12 +149,10 @@ tibble(
                     dist_court_hours = `D3d. If hours, how many hours to get there?`,
                     dist_court_mins = `D3e. If minutes, how many minutes to get there?`,
                     school_transport = `D4a. How would you get to the Primary/community School?`,
-                    school_time_unit = `D4b. How long does it take to get there?`,
                     school_days = `D4c. If days, how many days to get there?`,
                     school_hours = `D4d. If hours, how many hours to get there?`,
                     school_mins = `D4e. If minutes, how many minutes to get there?`,
                     bank_transport = `D5a. How would you get to the Bank?`,
-                    bank_time_unit = `D5b. How long does it take to get there?`,
                     bank_days = `D5c. If days, how many days to get there?`,
                     bank_hours = `D5d. If hours, how many hours to get there?`,
                     bank_mins = `D5e. If minutes, how many minutes to get there?`,
@@ -354,10 +341,10 @@ tibble(
                 barracks_state = `B13. In what state are the houses or barracks provided by the RPNGC?`,
                 
                 # Section C: Costs and funding
-                table_fee_avg = `C1. How much do people pay on average for a Village Court hearing as a table fee? in Kina [please write '999' if don’t know]`,
+                table_fee_avg = `C1. How much do people pay on average for a Village Court hearing as a table fee? in Kina [please write '999' if don't know]`,
                 same_fees = `C2. Does your Village Court charge the same fees for all kinds of hearings?`,
                 higher_fee_cases = `C3. If no, which cases have higher fees?`,
-                police_fuel_cost = `C4. How much do you have to pay for the fuel money on average for the nearest police station or post to respond? - in Kina [please write '999' if don’t know]`,
+                police_fuel_cost = `C4. How much do you have to pay for the fuel money on average for the nearest police station or post to respond? - in Kina [please write '999' if don't know]`,
                 opinion_table_fees = `C5. What do think about the current table fees charged by your Village Court?`,
                 opinion_police_fees = `C6. What do you think about the current amounts asked by the nearest police station/post to help pay for fuel and other things?`,
                 court_costs_met = `C7. How is the recurrent operational costs (not allowances) of the Village Court being met at present? [MR]`,
