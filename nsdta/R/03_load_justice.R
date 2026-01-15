@@ -26,13 +26,6 @@
     justice_community_raw <- read_excel(justice_file, sheet = 3, skip = 1, col_types = "text")
     justice_police_raw <- read_excel(justice_file, sheet = 4, skip = 1, col_types = "text")
 
-# check no. of cols
-tibble(
-    dataset = c("magistrate", "clerk", "community", "police"),
-    n_cols = c(ncol(justice_magistrate_raw), ncol(justice_clerk_raw), 
-               ncol(justice_community_raw), ncol(justice_police_raw))
-)
-
 # ============================================================================
 # STEP 1: Remove unhelpful columns
 # ============================================================================
@@ -69,12 +62,6 @@ tibble(
     justice_police <- justice_police_raw %>%
         select(-all_of(c(common_remove, police_remove)))
 
-# Check no. of cols after removal
-tibble(
-    dataset = c("magistrate", "clerk", "community", "police"),
-    n_cols = c(ncol(justice_magistrate), ncol(justice_clerk), 
-               ncol(justice_community), ncol(justice_police))
-)
 
 # ============================================================================
 # STEP 2: Rename variables to be simpler
@@ -160,12 +147,10 @@ tibble(
                     dist_court_hours = `D3d. If hours, how many hours to get there?`,
                     dist_court_mins = `D3e. If minutes, how many minutes to get there?`,
                     school_transport = `D4a. How would you get to the Primary/community School?`,
-                    school_time_unit = `D4b. How long does it take to get there?`,
                     school_days = `D4c. If days, how many days to get there?`,
                     school_hours = `D4d. If hours, how many hours to get there?`,
                     school_mins = `D4e. If minutes, how many minutes to get there?`,
                     bank_transport = `D5a. How would you get to the Bank?`,
-                    bank_time_unit = `D5b. How long does it take to get there?`,
                     bank_days = `D5c. If days, how many days to get there?`,
                     bank_hours = `D5d. If hours, how many hours to get there?`,
                     bank_mins = `D5e. If minutes, how many minutes to get there?`,
