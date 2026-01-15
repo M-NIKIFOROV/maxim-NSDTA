@@ -62,9 +62,7 @@
     justice_police <- justice_police_raw %>%
         select(-all_of(c(common_remove, police_remove)))
 
-       tibble(
-    magistrate = c(names(justice_magistrate), rep(NA, max_cols - ncol(justice_magistrate)))
-    ) %>% View()
+    
 
 
 # ============================================================================
@@ -343,10 +341,10 @@
                 barracks_state = `B13. In what state are the houses or barracks provided by the RPNGC?`,
                 
                 # Section C: Costs and funding
-                table_fee_avg = `C1. How much do people pay on average for a Village Court hearing as a table fee? in Kina [please write '999' if don’t know]`,
+                table_fee_avg = `C1. How much do people pay on average for a Village Court hearing as a table fee? in Kina [please write '999' if don't know]`,
                 same_fees = `C2. Does your Village Court charge the same fees for all kinds of hearings?`,
                 higher_fee_cases = `C3. If no, which cases have higher fees?`,
-                police_fuel_cost = `C4. How much do you have to pay for the fuel money on average for the nearest police station or post to respond? - in Kina [please write '999' if don’t know]`,
+                police_fuel_cost = `C4. How much do you have to pay for the fuel money on average for the nearest police station or post to respond? - in Kina [please write '999' if don't know]`,
                 opinion_table_fees = `C5. What do think about the current table fees charged by your Village Court?`,
                 opinion_police_fees = `C6. What do you think about the current amounts asked by the nearest police station/post to help pay for fuel and other things?`,
                 court_costs_met = `C7. How is the recurrent operational costs (not allowances) of the Village Court being met at present? [MR]`,
