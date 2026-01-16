@@ -1,0 +1,14 @@
+has_disability
+from_district
+leaders_contact_police
+ties_court
+ties_police
+set_sitting_day
+police_regular_hours
+police_24_7
+same_fees
+politicians_helped_court
+politicians_helped_police
+has_ljc
+court_calls_meetings
+police_call_meetings
