@@ -19,17 +19,17 @@ binary_map_mag_clerk <- list(
   meet_cost_transfer = c("1:Own money" = 0L, "2:Table fees" = 1L),
   meet_cost_fuel = c("1:Own money" = 0L, "2:Table fees" = 1L),
   meet_cost_maintenance = c("1:Own money" = 0L, "2:Table fees" = 1L),
-  meet_cost_paperwork = c("1:Own money" = 0L, "2:Table fees" = 1L),
+  meet_cost_paperwork = c("1:Own money" = 0L, "2:Table fees" = 1L)
 )
 
 binary_map_community <- list(
-  resp_gender = c("2:Female" = 0L, "1:Male" = 1L),
+  resp_gender = c("2:Female" = 0L, "1:Male" = 1L)
 )
 
 binary_map_police <- list(
   resp_gender = c("2:Female" = 0L, "1:Male" = 1L),
   oic_gender = c("2:Female" = 0L, "1:Male" = 1L),
-  toilet_type = c("1:Pit or shore drop latrine" = 0L, "2:Flush" = 1L),
+  toilet_type = c("1:Pit or shore drop latrine" = 0L, "2:Flush" = 1L)
 )
 
 
@@ -63,5 +63,19 @@ recode_labeled_binary <- function(df, mapping, unexpected_to_na = TRUE) {
   }
 
   df
+}
+
+# (3) Dataset-specific wrappers used in 03_load_justice.R
+
+recode_binary_mag_clerk <- function(df) {
+  recode_labeled_binary(df, binary_map_mag_clerk)
+}
+
+recode_binary_community <- function(df) {
+  recode_labeled_binary(df, binary_map_community)
+}
+
+recode_binary_police <- function(df) {
+  recode_labeled_binary(df, binary_map_police)
 }
 

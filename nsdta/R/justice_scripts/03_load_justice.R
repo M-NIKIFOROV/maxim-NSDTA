@@ -15,7 +15,8 @@
     library(rmarkdown)
     library(here)
     library(readxl)
-    getwd() # check working directory
+   
+    setwd("C:/Users/maxim/work/NSDTA-project/maxim-NSDTA")
 
 # Load raw data
     justice_file <- here("nsdta", "data", "raw", "law_justice",
@@ -66,11 +67,8 @@
 # STEP 2: Rename variables to be simpler
 # ============================================================================
 
-source(here("nsdta", "R", "justice_scripts", "justice_helper_scripts", "justice_rename_helpers.R"))
-
     # Load rename helper functions
-        source(here("nsdta", "R", "justice_rename_helpers.R"))
-    
+        source(here("nsdta", "R", "justice_scripts", "justice_helper_scripts", "justice_rename_helpers.R"))
     # Apply common renames to all datasets
         justice_magistrate <- justice_magistrate %>% rename_common()
         justice_clerk <- justice_clerk %>% rename_common()
@@ -88,7 +86,7 @@ source(here("nsdta", "R", "justice_scripts", "justice_helper_scripts", "justice_
 # ============================================================================
 
 # load recoding helper functions
-    source(here("nsdta", "R", "justice_scripts", "justice_helper_scripts", "justice_rename_helpers.R"))
+    source(here("nsdta", "R", "justice_scripts", "justice_helper_scripts", "justice_recode_functions.R"))
 
 
 
@@ -107,8 +105,11 @@ source(here("nsdta", "R", "justice_scripts", "justice_helper_scripts", "justice_
     
     
 # APPLICATION OF #B
+    # (Re)build yes/no column lists based on current data frames
+    source(here("nsdta", "R", "justice_scripts", "justice_helper_scripts", "build_yesno_text_files.R"))
+
     # load helpers that read yes/no lists and define apply-functions
-    source(here("nsdta", "R", "justice_yesno_helpers.R"))
+    source(here("nsdta", "R", "justice_scripts", "justice_helper_scripts", "justice_yesno_helpers.R"))
     # apply to each dataset
     justice_magistrate <- justice_magistrate %>% recode_yesno_mag_clerk()
     justice_clerk     <- justice_clerk     %>% recode_yesno_mag_clerk()
@@ -116,7 +117,7 @@ source(here("nsdta", "R", "justice_scripts", "justice_helper_scripts", "justice_
     justice_police    <- justice_police    %>% recode_yesno_police()
 
 # APPLICATION OF #C
-    # load helpers that read yes/no lists and define apply-functions
+    # load helpers that read binary variable lists and define apply-functions
     source(here("nsdta","R","justice_scripts","justice_helper_scripts","justice_binary_helpers.R"))
     # apply to each dataset
     justice_magistrate <- justice_magistrate %>% recode_binary_mag_clerk()
@@ -125,6 +126,16 @@ source(here("nsdta", "R", "justice_scripts", "justice_helper_scripts", "justice_
     justice_police     <- justice_police     %>% recode_binary_police()
 
 # APPLICATION OF #D
+    # load helpers that read Likert variable lists and define apply-functions
+    source(here("nsdta","R","justice_scripts","justice_helper_scripts","justice_likert_helpers.R"))
+    # apply to each dataset
+    justice_magistrate <- justice_magistrate %>% recode_likert_mag_clerk()
+    justice_clerk      <- justice_clerk      %>% recode_likert_mag_clerk()
+    justice_community  <- justice_community  %>% recode_likert_community()
+    justice_police     <- justice_police     %>% recode_likert_police()
+
+# APPLICATION OF #E
+
         
     
     
@@ -139,5 +150,3 @@ source(here("nsdta", "R", "justice_scripts", "justice_helper_scripts", "justice_
 # Save cleaned data
 # ============================================================================
 
-write_csv(justice_magistrate, 
-    here("nsdta", "data", "cleaned", "justice_magistrate_clean.csv"))

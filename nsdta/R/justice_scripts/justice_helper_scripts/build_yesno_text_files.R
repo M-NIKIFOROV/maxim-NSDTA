@@ -36,6 +36,20 @@ is_yesno_col <- function(x) {
   na_like  <- grepl("^na:\\s*not applicable$", vals)
 
   # Any value outside these patterns disqualifies the column
+# ---------------------------------------------------------------------------
+# Fast path: if all three output files already exist, do nothing
+# ---------------------------------------------------------------------------
+
+yesno_mag_clerk_path <- here::here("nsdta", "R", "yesno_mag_clerk_cols.txt")
+yesno_community_path <- here::here("nsdta", "R", "yesno_community_cols.txt")
+yesno_police_path    <- here::here("nsdta", "R", "yesno_police_cols.txt")
+
+if (file.exists(yesno_mag_clerk_path) &&
+    file.exists(yesno_community_path) &&
+    file.exists(yesno_police_path)) {
+  cat("Yes/no column lists already exist; skipping rebuild.\n")
+  return(invisible(NULL))
+}
   if (any(!(yes_like | no_like | dk_like | na_like))) return(FALSE)
 
   # Require at least one yes and one no observed to call it a yes/no variable
